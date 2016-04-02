@@ -12,3 +12,23 @@ ntp::servers:
   - 2.au.pool.ntp.org
   - 3.au.pool.ntp.org
 
+redhat6::packages:
+  - bind-utils
+  - man
+  - wget
+  - rsync
+  - sg3_utils
+  - tmpwatch
+  - tree
+  - lsof
+  - lsscsi
+  - zip
+  - augeas
+  - policycoreutils-python
+
+redhat7::packages:
+  - policycoreutils-python
+  - rsync
+  - system-storage-manager
+  - tmpwatch
+
