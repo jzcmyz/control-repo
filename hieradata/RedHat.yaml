@@ -27,6 +27,7 @@ redhat6::packages:
   - policycoreutils-python
 
 redhat7::packages:
+  - perl
   - policycoreutils-python
   - rsync
   - system-storage-manager
