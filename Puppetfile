@@ -5,6 +5,7 @@ forge "http://forge.puppetlabs.com"
 mod "puppetlabs/firewall",	:latest
 mod "puppetlabs/ntp",		:latest
 mod "puppetlabs/stdlib",	:latest
+mod "razorsedge/vmwaretools",	:latest
 #mod "puppetlabs/inifile",     '1.5.0'
 #mod "puppetlabs/stdlib",      '4.11.0'
 #mod "puppetlabs/concat",      '2.1.0'
