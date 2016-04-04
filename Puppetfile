@@ -9,6 +9,7 @@ mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall",		:latest
 mod "puppetlabs/ntp",			:latest
 mod "puppetlabs/stdlib",		:latest
+mod "stahnma/epel",			:latest
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
