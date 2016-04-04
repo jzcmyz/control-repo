@@ -2,10 +2,12 @@ forge "http://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
-mod "puppetlabs/firewall",	:latest
-mod "puppetlabs/ntp",		:latest
-mod "puppetlabs/stdlib",	:latest
 mod "CraigWatson1987/vmwaretools",	:latest
+mod "ihrwein/syslog_ng",		:latest
+mod "puppetlabs/concat",		:latest
+mod "puppetlabs/firewall",		:latest
+mod "puppetlabs/ntp",			:latest
+mod "puppetlabs/stdlib",		:latest
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
