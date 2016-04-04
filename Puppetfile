@@ -4,6 +4,7 @@ forge "http://forge.puppetlabs.com"
 # Versions should be updated to be the latest at the time you start
 mod "CraigWatson1987/vmwaretools",	:latest
 mod "ihrwein/syslog_ng",		:latest
+mod "puppetlabs/collectd",		:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall",		:latest
 mod "puppetlabs/ntp",			:latest
