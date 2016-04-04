@@ -5,6 +5,7 @@ class profile::base {
   include profile::epel
   include profile::ntp
   include profile::packages
+  include profile::sshx
 #  include profile::syslog
   include profile::vmwaretoolsx
 
