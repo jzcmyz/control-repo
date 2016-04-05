@@ -6,6 +6,7 @@ class profile::base {
   include my_fw
   include profile::ntp
   include profile::packages
+  include profile::puppetmaster
   include profile::postfixx
   include profile::sshx
 #  include profile::syslog
