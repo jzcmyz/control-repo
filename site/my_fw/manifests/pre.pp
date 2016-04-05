@@ -57,9 +57,9 @@ class my_fw::pre {
     proto => tcp,
     action => accept,
     dport => 2049,
-  }->
-  firewall { '999 Drop everytheng else':
-    action => drop,
   }
+#  firewall { '999 Drop everything else':
+#    action => drop,
+#  }
 }
 
