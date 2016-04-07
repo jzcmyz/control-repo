@@ -7,6 +7,7 @@ class profile::puppetmaster {
     proto => tcp,
     action => accept,
     dport => [ 80, 443 ],
+  }
 
 }
 

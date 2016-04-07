@@ -5,11 +5,13 @@ forge "http://forge.puppetlabs.com"
 mod "camptocamp/augeas",		:latest
 mod "camptocamp/postfix",		:latest
 mod "CraigWatson1987/vmwaretools",	:latest
+mod "golja/influxdb",			:latest
 mod "herculesteam/augeasproviders_core", :latest
 mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
 mod "ihrwein/syslog_ng",		:latest
 mod "puppet/collectd",			:latest
+mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall",		:latest
 mod "puppetlabs/ntp",			:latest
