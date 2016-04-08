@@ -17,6 +17,8 @@ mod "puppetlabs/firewall",		:latest
 mod "puppetlabs/ntp",			:latest
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
+mod "treydock/gpg_key",			:latest
+mod "treydock/repo_centos",		:latest
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples

@@ -8,6 +8,7 @@ class profile::base {
   include profile::packages
   include profile::puppetmaster
   include profile::postfixx
+  include profile::repo_centosx
   include profile::sshx
 #  include profile::syslog
   include profile::vmwaretoolsx
