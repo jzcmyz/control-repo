@@ -15,6 +15,7 @@ mod "puppetlabs/apache",		:latest
 mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall",		:latest
+mod "puppetlabs/mount_providers",	:latest
 mod "puppetlabs/ntp",			:latest
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest

@@ -1,4 +1,3 @@
-[root@puppet manifests]# more http.pp
 class profile::http {
 
   firewall { '020 open HTTP/HTTPS ports 80/433':
@@ -60,7 +59,6 @@ class profile::http {
     source => 'puppet:///modules/my_site/ks.cfg',
     mode => '0644',
   }
-
 
 }
 
