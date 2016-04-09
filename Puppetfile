@@ -11,6 +11,7 @@ mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
 mod "ihrwein/syslog_ng",		:latest
 mod "puppet/collectd",			:latest
+mod "puppetlabs/apache",		:latest
 mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall",		:latest

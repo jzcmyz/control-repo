@@ -1,0 +1,34 @@
+---
+
+#classes:
+#  - apache::mod::fastcgi
+#  - apache::mod::userdir
+#  - apache::mod::php
+#  - apache::mod::status
+#  - apache::mod::info
+
+#apache_wrapper::modules:
+#  - fastcgi
+#  - info
+#  - php5
+#  - status
+#  - userdir
+
+##testmsg: "from %{::clientcert}.yaml"
+site::testmsg::level: "from %{::clientcert}.yaml"
+
+apache::mod::status:
+  allow_from:
+    - '192.168.1.0/24'
+
+apache::mod::info:
+  allow_from:
+    - '192.168.1.0/24'
+
+apache::vhosts:
+  apache.ring.net:
+    port: 80,
+    docroot: /var/www/html
+  repo.ring.net:
+    port: 80,
+    docroot: /srv/centos
