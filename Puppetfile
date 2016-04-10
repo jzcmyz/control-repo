@@ -2,6 +2,7 @@ forge "http://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
+mod "bfraser/grafana",			:latest
 mod "camptocamp/augeas",		:latest
 mod "camptocamp/postfix",		:latest
 mod "CraigWatson1987/vmwaretools",	:latest
