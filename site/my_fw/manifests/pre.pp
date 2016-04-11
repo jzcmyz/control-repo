@@ -38,21 +38,21 @@ class my_fw::pre {
     action => accept,
     dport => 514,
   }->
-  firewall { '010 open Puppet port 8140':
-    proto => tcp,
-    action => accept,
-    dport => 8140,
-  }->
-  firewall { '010 open mcollective unencrypted port 61613':
-    proto => tcp,
-    action => accept,
-    dport => 61613,
-  }->
-  firewall { '011 open mcollective SSL port 61614':
-    proto => 'tcp',
-    action => accept,
-    dport => 61614,
-  }->
+#  firewall { '010 open Puppet port 8140':
+#    proto => tcp,
+#    action => accept,
+#    dport => 8140,
+#  }->
+#  firewall { '010 open mcollective unencrypted port 61613':
+#    proto => tcp,
+#    action => accept,
+#    dport => 61613,
+#  }->
+#  firewall { '011 open mcollective SSL port 61614':
+#    proto => 'tcp',
+#    action => accept,
+#    dport => 61614,
+#  }->
   firewall { '024 open nfsv4 port 2049':
     proto => tcp,
     action => accept,
