@@ -23,6 +23,10 @@ class profile::transmissionx {
 #    minute  => 0,
 #  }
 
-  include 'transmission'
+  class { '::transmission::daemon':
+    home     => '/home/gavin',
+    user     => 'gavin',
+    password => 'password',
+  }
 
 }
