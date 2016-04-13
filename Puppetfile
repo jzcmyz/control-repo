@@ -21,6 +21,7 @@ mod "puppetlabs/ntp",			:latest
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
 mod "stankevich/python",		:latest
+mod "thekevjames/transmission",		:latest
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
 
