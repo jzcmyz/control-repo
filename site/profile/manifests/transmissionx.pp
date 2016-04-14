@@ -23,10 +23,13 @@ class profile::transmissionx {
 #    minute  => 0,
 #  }
 
+  python::pip { 'transmissionrpc' :
+    pkgname       => 'transmissionrpc',
+    ensure        => 'latest',
+  }
   class {'transmission':
     config_path	   => '/var/lib/transmission',
     download_dir   => '/var/lib/transmission/Downloads',
-#    incomplete_dir => "/tmp/downloads",
     web_user       => 'admin',
     web_password   => '{b7518c56374798de52c8ef08d9eb1024119b7afeszwsK/7n',
     web_port       => 9091,
