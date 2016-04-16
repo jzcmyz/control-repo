@@ -13,7 +13,7 @@ mod "herculesteam/augeasproviders_core", :latest
 mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
 mod "ihrwein/syslog_ng",		:latest
-mod "maestrodev-wget",			:latest
+mod "maestrodev/wget",			:latest
 mod "puppet/collectd",			:latest
 mod "puppetlabs/apache"
 mod "puppetlabs/apt",			:latest
@@ -24,7 +24,7 @@ mod "puppetlabs/ntp",			:latest
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
 mod "stankevich/python",		:latest
-# mod "Magmatrixx/transmission",		:latest
+mod "Magmatrixx/transmission",		:latest
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
 
