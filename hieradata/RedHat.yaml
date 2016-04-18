@@ -27,6 +27,7 @@ redhat6::packages:
   - policycoreutils-python
 
 redhat7::packages:
+  - net-tools
   - perl
   - policycoreutils-python
   - rsync

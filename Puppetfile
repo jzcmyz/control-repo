@@ -27,6 +27,7 @@ mod "stankevich/python",		:latest
 mod "Magmatrixx/transmission",		:latest
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
+mod "WhatsARanjit/plexmediaserver"
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
