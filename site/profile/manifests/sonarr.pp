@@ -18,5 +18,25 @@ class profile::sonarr {
   $sonarr_packages = [ 'mediainfo', 'libzen', 'libmediainfo', 'curl', 'gettext', 'mono-opt', 'sqlite.x86_64' ]
 
   package { $sonarr_packages: }
+#
+# Add startup script
+#
 
+ file { 'mountpoint_media':
+    name => '/mnt/media',
+    ensure => 'directory',
+    owner  => 'gavin',
+    group  => 'gavin',
+    mode   => '0750',
+  }
+
+  mounttab {'/mnt/media':
+    require => File['mountpoint_media'],
+    ensure => present,
+    fstype => 'nfs',
+    device => 'freenas.ring.net:/mnt/datastore/media',
+    options => 'defaults',
+    provider => augeas,
+  }
+#
 }
