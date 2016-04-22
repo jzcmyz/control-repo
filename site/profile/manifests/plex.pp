@@ -15,7 +15,6 @@ class profile::plex {
   class {'plexmediaserver':
     plex_user                                 => 'plex',
     plex_media_server_home                    => '/usr/lib/plexmediaserver',
-#    plex_media_server_application_support_dir => "`getent passwd $plex_user|awk -F : '{print $6}'`/My Documents/Application Support",
     plex_media_server_max_plugin_procs        => '7',
     plex_media_server_max_stack_size          => '20000',
     plex_media_server_max_lock_mem            => '4000',
