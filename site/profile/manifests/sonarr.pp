@@ -15,7 +15,7 @@ class profile::sonarr {
   }
 
 #  $sonarr_packages = [ 'mediainfo', 'libzen', 'libmediainfo', 'curl', 'gettext', 'mono-core', 'mono-devel', 'sqlite.x86_64' ]
-  $sonarr_packages = [ 'mediainfo', 'libzen', 'libmediainfo', 'curl', 'gettext', 'mono-opt', 'sqlite.x86_64' ]
+  $sonarr_packages = [ 'mediainfo', 'libzen', 'libmediainfo', 'gettext', 'mono-opt', 'sqlite.x86_64' ]
 
   package { $sonarr_packages: }
 #
