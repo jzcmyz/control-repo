@@ -18,6 +18,23 @@ class profile::sonarr {
   $sonarr_packages = [ 'mediainfo', 'libzen', 'libmediainfo', 'gettext', 'mono-opt', 'sqlite.x86_64' ]
 
   package { $sonarr_packages: }
+
+
+#
+#
+#
+#
+  user { 'sonarr':
+    name => 'sonarr',
+    ensure => present,
+    home => '/var/lib/sonarr',
+    shell => '/sbin/nologin',
+  }
+
+  staging::deploy { 'sonarr':
+    source => 'http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz',
+    target => '/opt/gavin',
+  }
 #
 # Add startup script
 #
