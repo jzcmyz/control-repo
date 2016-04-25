@@ -46,7 +46,7 @@ class profile::sonarr {
     ensure => 'directory',
     owner  => 'gavin',
     group  => 'gavin',
-    mode   => '0750',
+    mode   => '0770',
   }
 
   mounttab {'/mnt/media':
@@ -57,5 +57,23 @@ class profile::sonarr {
     options => 'defaults',
     provider => augeas,
   }
+
+ file { 'mountpoint_downloads':
+    name => '/mnt/downloads',
+    ensure => 'directory',
+    owner  => 'gavin',
+    group  => 'gavin',
+    mode   => '0770',
+  }
+
+  mounttab {'/mnt/downloads':
+    require => File['mountpoint_downloads'],
+    ensure => present,
+    fstype => 'nfs',
+    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
+    options => 'defaults',
+    provider => augeas,
+  }
+
 #
 }
