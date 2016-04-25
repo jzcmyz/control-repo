@@ -31,9 +31,11 @@ class profile::sonarr {
     shell => '/sbin/nologin',
   }
 
-  staging::deploy { 'sonarr':
-    source => 'http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz',
+  archive { 'NzbDrone.master.tar.gz':
+    ensure => present,
+    url => 'http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz',
     target => '/opt/gavin',
+    isrc_target => '/tmp',
   }
 #
 # Add startup script
