@@ -31,12 +31,14 @@ class profile::sonarr {
     shell => '/sbin/nologin',
   }
 
-  archive { 'NzbDrone.master.tar.gz':
+  archive { 'NzbDrone.master':
     ensure => present,
     url => 'http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz',
-    target => '/opt/gavin',
-    isrc_target => '/tmp',
+    target => '/opt/',
+    src_target => '/tmp',
+    checksum => false,
   }
+
 #
 # Add startup script
 #
@@ -58,22 +60,22 @@ class profile::sonarr {
     provider => augeas,
   }
 
- file { 'mountpoint_downloads':
-    name => '/mnt/downloads',
-    ensure => 'directory',
-    owner  => 'gavin',
-    group  => 'gavin',
-    mode   => '0770',
-  }
+# file { 'mountpoint_downloads':
+#    name => '/mnt/downloads',
+#    ensure => 'directory',
+#    owner  => 'gavin',
+#    group  => 'gavin',
+#    mode   => '0770',
+#  }
 
-  mounttab {'/mnt/downloads':
-    require => File['mountpoint_downloads'],
-    ensure => present,
-    fstype => 'nfs',
-    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-    options => 'defaults',
-    provider => augeas,
-  }
+#  mounttab {'/mnt/downloads':
+#    require => File['mountpoint_downloads'],
+#    ensure => present,
+#    fstype => 'nfs',
+#    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
+#    options => 'defaults',
+#    provider => augeas,
+#  }
 
 #
 }
