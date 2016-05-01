@@ -33,7 +33,7 @@ mod "WhatsARanjit/plexmediaserver"
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
 mod 'transmission',
-  :git    => 'https://github.com/Magmatrix/transmission.git'
+  :git    => 'https://github.com/Magmatrix/transmission.git',
   :commit => '0c5abc1'
 
 #mod 'apache',
