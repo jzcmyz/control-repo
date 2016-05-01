@@ -23,22 +23,22 @@ class profile::transmissionx {
 #    minute  => 0,
 #  }
 
- file { 'mountpoint_downloads':
-    name => '/mnt/downloads',
-    ensure => 'directory',
-    owner  => 'gavin',
-    group  => 'gavin',
-    mode   => '0770',
-  }
+# file { 'mountpoint_downloads':
+#    name => '/mnt/downloads',
+#    ensure => 'directory',
+#    owner  => 'gavin',
+#    group  => 'gavin',
+#    mode   => '0770',
+#  }
 
-  mounttab {'/mnt/downloads':
-    require => File['mountpoint_downloads'],
-    ensure => present,
-    fstype => 'nfs',
-    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-    options => 'defaults',
-    provider => augeas,
-  }
+#  mounttab {'/mnt/downloads':
+#    require => File['mountpoint_downloads'],
+#    ensure => present,
+#    fstype => 'nfs',
+#    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
+#    options => 'defaults',
+#    provider => augeas,
+#  }
 
   python::pip { 'transmissionrpc' :
     pkgname       => 'transmissionrpc',

@@ -60,22 +60,4 @@ class profile::sonarr {
     provider => augeas,
   }
 
-# file { 'mountpoint_downloads':
-#    name => '/mnt/downloads',
-#    ensure => 'directory',
-#    owner  => 'gavin',
-#    group  => 'gavin',
-#    mode   => '0770',
-#  }
-
-#  mounttab {'/mnt/downloads':
-#    require => File['mountpoint_downloads'],
-#    ensure => present,
-#    fstype => 'nfs',
-#    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-#    options => 'defaults',
-#    provider => augeas,
-#  }
-
-#
 }
