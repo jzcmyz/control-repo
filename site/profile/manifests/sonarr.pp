@@ -19,11 +19,6 @@ class profile::sonarr {
 
   package { $sonarr_packages: }
 
-
-#
-#
-#
-#
   user { 'sonarr':
     name => 'sonarr',
     ensure => present,
@@ -46,9 +41,6 @@ class profile::sonarr {
  file { 'mountpoint_media':
     name => '/mnt/media',
     ensure => 'directory',
-    owner  => 'gavin',
-    group  => 'gavin',
-    mode   => '0770',
   }
 
   mounttab {'/mnt/media':

@@ -28,9 +28,8 @@ mod "stankevich/python",		:latest
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
 mod "WhatsARanjit/plexmediaserver"
-mod "WhatsARanjit/transmission"
+#mod "WhatsARanjit/transmission"
 
 # Modules from Git
-#mod 'transmission',
-#  :git    => 'https://github.com/Magmatrix/transmission.git',
-#  :commit => '0c5abc1'
+mod 'transmission',
+  :git    => 'http://razor.ring.net/jzcmyz/transmission'
