@@ -40,18 +40,21 @@ class profile::transmissionx {
 #    provider => augeas,
 #  }
 
-  python::pip { 'transmissionrpc' :
-    pkgname       => 'transmissionrpc',
-    ensure        => 'latest',
-  }
-  class {'transmission':
-    config_path	   => '/var/lib/transmission',
-    download_dir   => '/mnt/downloads',
-    web_user       => 'admin',
-    web_password   => '{b7518c56374798de52c8ef08d9eb1024119b7afeszwsK/7n',
-    web_port       => 9091,
-    web_whitelist  => ['127.0.0.1', '192.168.1.*'],
-    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
+#  python::pip { 'transmissionrpc' :
+#    pkgname       => 'transmissionrpc',
+#    ensure        => 'latest',
+#  }
+
+  class {'transmission::daemon':
+    rpc-authentication-required		=> true,
+    rpc-enabled		=> true,
+    trand	   => '/var/lib/transmission',
+    downloadr-_dir   => '/mnt/downloads',
+    rpc-username       => 'admin',
+    rpc-password   	=> '{b7518c56374798de52c8ef08d9eb1024119b7afeszwsK/7n',
+    rpc-port       	=> 9091,
+    rpc-whitelist  	=> ['127.0.0.1', '192.168.1.*'],
+#    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
   }
 
 }

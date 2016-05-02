@@ -25,17 +25,12 @@ mod "puppetlabs/ntp",			:latest
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
 mod "stankevich/python",		:latest
-#mod "Magmatrixx/transmission",		:latest
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
 mod "WhatsARanjit/plexmediaserver"
+mod "WhatsARanjit/transmission"
 
 # Modules from Git
-# Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
-mod 'transmission',
-  :git    => 'https://github.com/Magmatrix/transmission.git',
-  :commit => '0c5abc1'
-
-#mod 'apache',
-#  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
-#  :branch => 'docs_experiment'
+#mod 'transmission',
+#  :git    => 'https://github.com/Magmatrix/transmission.git',
+#  :commit => '0c5abc1'
