@@ -31,6 +31,6 @@ mod "WhatsARanjit/plexmediaserver"
 #mod "WhatsARanjit/transmission"
 
 # Modules from Git
-mod 'transmission',
-  :git    => 'http://razor.ring.net/jzcmyz/transmission'
+#mod 'transmission',
+#  :git    => 'http://razor.ring.net/jzcmyz/transmission'
 #  Gavin Was here
