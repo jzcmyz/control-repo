@@ -55,6 +55,6 @@ class profile::transmissionx {
 #    rpc_port            => 9091,
 #    rpc_whitelist       => "127.0.0.1,192.168.1.*",
 #    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
-  }
+#  }
 
 }
