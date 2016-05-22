@@ -16,7 +16,7 @@ mod "ihrwein/syslog_ng",		:latest
 mod "nanliu/staging",			:latest
 mod "maestrodev/wget",			:latest
 mod "puppet/collectd",			:latest
-mod "puppetlabs/apache"
+mod "puppetlabs/apache",                '1.10.0' 
 mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall"
