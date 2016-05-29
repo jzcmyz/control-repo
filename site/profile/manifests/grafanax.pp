@@ -9,6 +9,7 @@ class profile::grafanax {
   class {'grafana':
     install_method => 'repo',
     manage_package_repo => true,
+    version => 'grafana-3.0.4-1464167696',
   }
 
 }
