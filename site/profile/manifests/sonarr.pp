@@ -34,8 +34,12 @@ class profile::sonarr {
     checksum => false,
   }
 
+  systemd::unit_file { 'sonarr.service':
+    source => 'puppet:///modules/my_site/sonarr.service',
+  }
 #
 # Add startup script
+# Add Sonarr install steps
 #
 
  file { 'mountpoint_media':

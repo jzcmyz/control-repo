@@ -6,6 +6,7 @@ mod "bfraser/grafana",			'2.5.0'
 mod "camptocamp/archive",		:latest
 mod "camptocamp/augeas",		:latest
 mod "camptocamp/postfix",		:latest
+mod "camptocamp/systemd"
 mod "CraigWatson1987/vmwaretools",	:latest
 mod "garethr/docker",			:latest
 mod "golja/influxdb",			:latest
@@ -21,7 +22,7 @@ mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/firewall"
 mod "puppetlabs/mount_providers",	:latest
-mod "puppetlabs/ntp",			:latest
+mod "puppetlabs/ntp",			'4.2.0'
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
 mod "stankevich/python",		:latest
