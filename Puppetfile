@@ -26,7 +26,7 @@ mod "puppetlabs/ntp",			'4.2.0'
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
 mod "stankevich/python",		:latest
-mod "theforeman/dhcp",
+mod "theforeman/dhcp"
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
 mod "WhatsARanjit/plexmediaserver"
