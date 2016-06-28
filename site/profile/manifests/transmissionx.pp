@@ -1,11 +1,15 @@
 class profile::transmissionx {
 
-  firewall { '100 open Transmission ports 50341':
-    proto => [ 'tcp', 'udp' ],
+  firewall { '100 open Transmission TCP ports 50341':
+    proto => tcp,
     action => accept,
     dport => 50341,
   }
-
+  firewall { '100 open Transmission UDP ports 50341':
+    proto => udp,
+    action => accept,
+    dport => 50341,
+  }
   firewall { '102 open Transmission GUI port 9091':
     proto => tcp,
     action => accept,
@@ -23,22 +27,22 @@ class profile::transmissionx {
 #    minute  => 0,
 #  }
 
-# file { 'mountpoint_downloads':
-#    name => '/mnt/downloads',
-#    ensure => 'directory',
+ file { 'mountpoint_downloads':
+    name => '/mnt/downloads',
+    ensure => 'directory',
 #    owner  => 'gavin',
 #    group  => 'gavin',
 #    mode   => '0770',
-#  }
+  }
 
-#  mounttab {'/mnt/downloads':
-#    require => File['mountpoint_downloads'],
-#    ensure => present,
-#    fstype => 'nfs',
-#    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-#    options => 'defaults',
-#    provider => augeas,
-#  }
+  mounttab {'/mnt/downloads':
+    require => File['mountpoint_downloads'],
+    ensure => present,
+    fstype => 'nfs',
+    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
+    options => 'defaults',
+    provider => augeas,
+  }
 
 #  python::pip { 'transmissionrpc' :
 #    pkgname       => 'transmissionrpc',

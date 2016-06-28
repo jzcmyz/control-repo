@@ -2,12 +2,12 @@ forge "http://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
-mod "bfraser/grafana",			'2.5.0'
+mod "bfraser/grafana"
 mod "camptocamp/archive",		:latest
 mod "camptocamp/augeas",		:latest
 mod "camptocamp/postfix",		:latest
 mod "camptocamp/systemd"
-mod "CraigWatson1987/vmwaretools",	:latest
+mod "CraigWatson1987/vmwaretools"
 mod "garethr/docker",			:latest
 mod "golja/influxdb",			:latest
 mod "herculesteam/augeasproviders_core", :latest
@@ -26,7 +26,6 @@ mod "puppetlabs/ntp",			'4.2.0'
 mod "puppetlabs/stdlib",		:latest
 mod "stahnma/epel",			:latest
 mod "stankevich/python",		:latest
-mod "theforeman/dhcp"
 mod "treydock/gpg_key",			:latest
 mod "treydock/repo_centos",		:latest
 mod "WhatsARanjit/plexmediaserver"

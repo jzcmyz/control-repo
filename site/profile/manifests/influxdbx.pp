@@ -1,7 +1,7 @@
 class profile::influxdbx {
 
   firewall { '808 open influxdb ports 8083 8086':
-    proto => 'tcp',
+    proto => tcp,
     action => accept,
     dport => [ 8083, 8086 ],
   }

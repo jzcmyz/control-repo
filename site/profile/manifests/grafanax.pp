@@ -1,7 +1,7 @@
 class profile::grafanax {
 
   firewall { '300 open Grafana port 3000':
-    proto => 'tcp',
+    proto => tcp,
     action => accept,
     dport => 3000,
   }

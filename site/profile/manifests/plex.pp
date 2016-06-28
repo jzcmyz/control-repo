@@ -1,13 +1,13 @@
 class profile::plex {
 
   firewall { '200 open Plex Media Server ports 32400 32469':
-    proto => 'tcp',
+    proto => tcp,
     action => accept,
     dport => [ 32400, 32469 ],
   }
 
   firewall { '201 open Plex Media Server port for DLNA':
-    proto => 'udp',
+    proto => udp,
     action => accept,
     dport => [ 1900, 5353 ],
   }
