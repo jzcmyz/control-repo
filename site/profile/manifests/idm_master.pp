@@ -1,7 +1,12 @@
 class profile::idm_master {
 
-  firewall { '053 open BIND/DNS port 53':
-    proto => [ 'tcp', 'udp' ],
+  firewall { '053 open BIND/DNS TCP port 53':
+    proto => tcp,
+    action => accept,
+    dport => 53,
+  }
+  firewall { '053 open BIND/DNS UDP port 53':
+    proto => udp,
     action => accept,
     dport => 53,
   }
@@ -15,8 +20,13 @@ class profile::idm_master {
     action => accept,
     dport => [ 389, 636 ],
   }
-  firewall { '022 open Kerberos ports 88/464':
-    proto => [ 'tcp', 'udp' ],
+  firewall { '022 open Kerberos TCP ports 88/464':
+    proto => tcp,
+    action => accept,
+    dport => [ 88, 464 ],
+  }
+  firewall { '022 open Kerberos UDP ports 88/464':
+    proto => udp,
     action => accept,
     dport => [ 88, 464 ],
   }
