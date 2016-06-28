@@ -23,11 +23,11 @@ class my_fw::pre {
     action => accept,
     dport => 22,
   }->
-  firewall { '010 open DNS port 53':
-    proto => [ 'tcp', 'udp' ],
-    action => accept,
-    dport => 53,
-  }->
+#  firewall { '010 open DNS port 53':
+#    proto => [ 'tcp', 'udp' ],
+#    action => accept,
+#    dport => 53,
+#  }->
   firewall { '010 open NTP port 123':
     proto => [ 'tcp', 'udp' ],
     action => accept,

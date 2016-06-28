@@ -1,5 +1,10 @@
 class profile::idm_master {
 
+  firewall { '053 open BIND/DNS port 53':
+    proto => [ 'tcp', 'udp' ],
+    action => accept,
+    dport => 53,
+  }
   firewall { '020 open HTTP/HTTPS ports 80/433':
     proto => tcp,
     action => accept,
