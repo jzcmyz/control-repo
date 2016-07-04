@@ -20,7 +20,7 @@ mod "puppet/collectd",			:latest
 mod "puppetlabs/apache",                '1.10.0' 
 mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
-mod "puppetlabs/dhcp",			'0.4.0'
+mod "puppetlabs/dhcp",			:latest
 mod "puppetlabs/firewall"
 mod "puppetlabs/mount_providers",	:latest
 mod "puppetlabs/ntp",			'4.2.0'
