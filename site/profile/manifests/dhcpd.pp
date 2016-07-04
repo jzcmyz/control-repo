@@ -14,13 +14,17 @@ class profile::dhcpd {
       '1.168.192.in-addr.arpa',
       ],
     nameservers  => ['192.168.1.8'],
+    interfaces => ['eth0'],
  #   dnsupdatekey => "/etc/bind/keys.d/$ddnskeyname",
  #   require      => Bind::Key[ $ddnskeyname ],
  #   pxeserver    => '192.168.1.6',
  #   pxefilename  => 'pxelinux.0',
     default_lease_time => 86400,
     max_lease_time => 604800,
-
+    pxeserver    => '192.168.1.6',
+ #   pxefilename  => 'undionly.kpxe',
+    ipxe_filename => 'undionly.kpxe',
+    ipxe_bootstrap  => 'bootstrap.ipxe',
   }
 
   dhcp::pool{ 'ring.net':
