@@ -36,3 +36,8 @@ mod "WhatsARanjit/plexmediaserver"
 #mod 'transmission',
 #  :git    => 'http://razor.ring.net/jzcmyz/transmission'
 #  Gavin Was here
+  
+# Modules from Git
+mod 'dhcp',
+  :git    => 'https://github.com/voxpupuli/puppet-dhcp.git'
+#
