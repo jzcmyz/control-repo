@@ -20,7 +20,7 @@ class profile::dhcpd {
  #   default_lease_time => 86400,
  #   max_lease_time => 604800,
     pxeserver    => '192.168.1.6',
- #   pxefilename    => 'pxelinux.0',
+    pxefilename    => 'pxelinux.0',
     ipxe_filename => 'undionly.kpxe',
     ipxe_bootstrap  => 'bootstrap.ipxe',
   }
