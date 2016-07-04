@@ -19,17 +19,22 @@ class profile::dhcpd {
  #   require      => Bind::Key[ $ddnskeyname ],
  #   default_lease_time => 86400,
  #   max_lease_time => 604800,
+#    pxeserver    => '192.168.1.6',
+#    pxefilename    => 'pxelinux.0',
+#    ipxe_filename => 'undionly.kpxe',
+#    ipxe_bootstrap  => 'bootstrap.ipxe',
+  }
+
+  dhcp::pool{ 'ring.net':
+    network => '192.168.1.0',
+    mask    => '255.255.255.0',
+    range   => '192.168.1.100 192.168.1.140',
+    gateway => '192.168.1.254',
     pxeserver    => '192.168.1.6',
     pxefilename    => 'pxelinux.0',
     ipxe_filename => 'undionly.kpxe',
     ipxe_bootstrap  => 'bootstrap.ipxe',
-  }
 
-  dhcp::pool{ 'ring.net':
-    network => '192.168.10',
-    mask    => '255.255.255.0',
-    range   => '192.168.1.100 192.168.1.140',
-    gateway => '192.168.1.254',
   }
 
 }
