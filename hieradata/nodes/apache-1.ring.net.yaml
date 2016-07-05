@@ -34,3 +34,6 @@ apache::vhosts:
     docroot: /srv/centos
 
 network::gateway: 192.168.1.254
+network::interfaces_hash:
+  ens32:
+    enable_dhcp: true
