@@ -4,6 +4,7 @@ class profile::base {
   include profile::collectd
   include profile::epel
   include my_fw
+  include profile::networkx
   include profile::ntp
   include profile::packages
 #  include profile::puppetmaster
