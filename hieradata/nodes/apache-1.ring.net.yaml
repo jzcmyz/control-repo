@@ -37,5 +37,3 @@ network::gateway: 192.168.1.254
 network::interfaces_hash:
   ens32:
     enable_dhcp: true
-    dns_nameservers: "192.168.1.8"
-    dns_search: "ring.net"
