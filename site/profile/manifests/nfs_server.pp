@@ -24,12 +24,12 @@ class profile::nfs_server {
     bind    => 'rbind',
     clients => '*(rw,insecure,no_subtree_check,async,no_root_squash) localhost(rw)'
   }
-  nfs::server::export{ '/home':
-    ensure  => 'mounted',
-    bind    => 'rbind',
-    clients => '*(rw,sec=sys:krb5:krb5i:krb5p)',
-    require => Mounttab['/home'],
-  }
+#  nfs::server::export{ '/home':
+#    ensure  => 'mounted',
+#    bind    => 'rbind',
+#    clients => '*(rw,sec=sys:krb5:krb5i:krb5p)',
+#    require => Mounttab['/home'],
+#  }
 
 }
 
