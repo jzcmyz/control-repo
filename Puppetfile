@@ -8,6 +8,7 @@ mod "camptocamp/augeas",		:latest
 mod "camptocamp/postfix",		:latest
 mod "camptocamp/systemd"
 mod "CraigWatson1987/vmwaretools"
+mod "derdanne/nfs",                     '0.0.14'
 mod "example42/network"
 mod "garethr/docker",			:latest
 mod "golja/influxdb",			:latest
