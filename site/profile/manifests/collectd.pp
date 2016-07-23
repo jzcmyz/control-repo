@@ -59,5 +59,9 @@ class profile::collectd {
     port => 25826,
   }
 
+  # reminder hiera_hash merges across the heirarchy.
+  $c_plugins = hiera_hash('collectd::plugins', {})
+  create_resources('collectd::plugin', $c_plugins)
+
 }
 
