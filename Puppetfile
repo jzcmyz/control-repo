@@ -17,7 +17,7 @@ mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
 #mod "ihrwein/syslog_ng",		:latest
 mod "nanliu/staging",			:latest
-mod "norisenetwork/syslog_ng",		:latest
+mod "norisnetwork/syslog_ng",		:latest
 mod "maestrodev/wget",			:latest
 mod "puppet/collectd",			:latest
 mod "puppetlabs/apache",                '1.10.0' 
