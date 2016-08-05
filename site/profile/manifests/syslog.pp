@@ -9,27 +9,6 @@ class profile::syslog {
 # For debugging
 # notify{"syslog-ng role = $role":}
 
-  case $operatingsystemmajrelease {
-    "7": {
-        yumrepo {'czanik-syslog-ng36':
-          descr => 'Copr repo for syslog-ng36 owned by czanik',
-          baseurl => 'https://copr-be.cloud.fedoraproject.org/results/czanik/syslog-ng36/epel-7-$basearch',
-          gpgkey => 'https://copr-be.cloud.fedoraproject.org/results/czanik/syslog-ng36/pubkey.gpg',
-          enabled => true,
-          gpgcheck => true,
-        }
-    }
-    "6": {
-        yumrepo {'czanik-syslog-ng36epel6':
-          descr => 'Copr repo for syslog-ng36epel6 owned by czanik',
-          baseurl => 'https://copr-be.cloud.fedoraproject.org/results/czanik/syslog-ng36epel6/epel-6-$basearch',
-          gpgkey => 'https://copr-be.cloud.fedoraproject.org/results/czanik/syslog-ng36epel6/pubkey.gpg',
-          enabled => true,
-          gpgcheck => true,
-        }
-     }
-  }
-
 #
 #  disable the rsyslog service
 #
