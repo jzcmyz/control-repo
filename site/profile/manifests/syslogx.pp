@@ -17,10 +17,6 @@ class profile::syslogx {
 #    enable => false,
 #  }
 
-  package {'rsyslog':
-    ensure => absent,
-  }
-
   class {'syslog_ng':
 #    manage_package => true,
 #    modules => ['redis'],
@@ -97,46 +93,46 @@ syslog_ng::filter {'f_news':
 #
 # Log definitions
 #
-#syslog_ng::log {'auth':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_auth' ]',
-#  destinations  => [ 'd_auth' ]',
-#}
-#syslog_ng::log {'boot':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_boot' ]',
-#  destinations => [ 'd_boot' ]',
-#}
-#syslog_ng::log {'cron':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_cron' ]',
-#  destinations => [ 'd_cron' ]',
-#}
-#syslog_ng::log {'default':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_default' ]',
-#  destinations => [ 'd_mesg' ]',
-#}
-#syslog_ng::log {'emergency':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_emergency' ]',
-#  destinations => [ 'd_mlal' ]',
-#}
-#syslog_ng::log {'kernel':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_kernel' ]',
-#  destinations => [ 'd_kern' ]',
-#}
-#syslog_ng::log {'mail':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_mail' ]',
-#  destinations => [ 'd_mail' ]',
-#}
-#syslog_ng::log {'news':
-#  sources      => [ 's_sys' ],
-#  filters      => [ 'f_news' ]',
-#  destinations => [ 'd_spol' ]',
-#}
+syslog_ng::log {'auth':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_auth' ]',
+  destinations  => [ 'd_auth' ]',
+}
+syslog_ng::log {'boot':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_boot' ]',
+  destinations => [ 'd_boot' ]',
+}
+syslog_ng::log {'cron':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_cron' ]',
+  destinations => [ 'd_cron' ]',
+}
+syslog_ng::log {'default':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_default' ]',
+  destinations => [ 'd_mesg' ]',
+}
+syslog_ng::log {'emergency':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_emergency' ]',
+  destinations => [ 'd_mlal' ]',
+}
+syslog_ng::log {'kernel':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_kernel' ]',
+  destinations => [ 'd_kern' ]',
+}
+syslog_ng::log {'mail':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_mail' ]',
+  destinations => [ 'd_mail' ]',
+}
+syslog_ng::log {'news':
+  sources      => [ 's_sys' ],
+  filters      => [ 'f_news' ]',
+  destinations => [ 'd_spol' ]',
+}
 
 
 #  if $role == "server" {
