@@ -85,7 +85,7 @@ syslog_ng::filter {'f_mail':
   definition => 'facility(mail);',
 }
 syslog_ng::filter {'f_default':
-  definition => 'level(info..emerg) and not (facility(mail) or facility(authpriv) or facility(cron)); ',
+  definition => 'level(info..emerg) and not (facility(mail) or facility(authpriv) or facility(cron));',
 }
 syslog_ng::filter {'f_news':
   definition => 'facility(uucp) or (facility(news) and level(crit..emerg));',
@@ -160,15 +160,14 @@ syslog_ng::log {'news':
 # Definitions for the Syslog client
 #
 
-  if $role == "client" {
-    syslog_ng::destination {'d_logserver':
-      definition => 'type(udp), host(logvault-1.ring.net),port(514);',
-    }
-    syslog_ng::log {'l_logserver':
-      sources      => [ 's_sys' ],
-      destinations => [ 'd_logserver' ],
-    }
-  }
+syslog_ng::destination {'d_logserver':
+  definition => 'type(udp), host(logvault-1.ring.net),port(514);',
+}
+
+syslog_ng::log {'l_logserver':
+  sources      => [ 's_sys' ],
+  destinations => [ 'd_logserver' ],
+}
 
 }
 
