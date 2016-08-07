@@ -89,97 +89,90 @@ syslog_ng::filter {'f_mail':
   definition => 'facility(mail);',
 }
 syslog_ng::filter {'f_default':
-  definition => 'level(info..emerg) and
-        not (facility(mail)
-        or facility(authpriv)
-        or facility(cron)); ',
+  definition => 'level(info..emerg) and not (facility(mail) or facility(authpriv) or facility(cron)); ',
 }
 syslog_ng::filter {'f_news':
-  definition => 'facility(uucp) or
-        (facility(news)
-        and level(crit..emerg));',
+  definition => 'facility(uucp) or (facility(news) and level(crit..emerg));',
 }
 #
 # Log definitions
 #
-syslog_ng::log {'auth':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_auth' ]',
-  destinations => [ 'd_auth' ]',
-}
-syslog_ng::log {'boot':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_boot' ]',
-  destinations => [ 'd_boot' ]',
-}
-syslog_ng::log {'cron':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_cron' ]',
-  destinations => [ 'd_cron' ]',
-}
-syslog_ng::log {'default':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_default' ]',
-  destinations => [ 'd_mesg' ]',
-}
-syslog_ng::log {'emergency':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_emergency' ]',
-  destinations => [ 'd_mlal' ]',
-}
-syslog_ng::log {'kernel':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_kernel' ]',
-  destinations => [ 'd_kern' ]',
-}
-syslog_ng::log {'mail':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_mail' ]',
-  destinations => [ 'd_mail' ]',
-}
-syslog_ng::log {'news':
-  sources      => [ 's_sys' ],
-  filters      => [ 'f_news' ]',
-  destinations => [ 'd_spol' ]',
-}
+#syslog_ng::log {'auth':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_auth' ]',
+#  destinations  => [ 'd_auth' ]',
+#}
+#syslog_ng::log {'boot':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_boot' ]',
+#  destinations => [ 'd_boot' ]',
+#}
+#syslog_ng::log {'cron':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_cron' ]',
+#  destinations => [ 'd_cron' ]',
+#}
+#syslog_ng::log {'default':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_default' ]',
+#  destinations => [ 'd_mesg' ]',
+#}
+#syslog_ng::log {'emergency':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_emergency' ]',
+#  destinations => [ 'd_mlal' ]',
+#}
+#syslog_ng::log {'kernel':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_kernel' ]',
+#  destinations => [ 'd_kern' ]',
+#}
+#syslog_ng::log {'mail':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_mail' ]',
+#  destinations => [ 'd_mail' ]',
+#}
+#syslog_ng::log {'news':
+#  sources      => [ 's_sys' ],
+#  filters      => [ 'f_news' ]',
+#  destinations => [ 'd_spol' ]',
+#}
 
 
-  if $role == "server" {
-    syslog_ng::source {'s_sys':
-      definition => 'type(udp),ip("0.0.0.0"),port(514)',
-    }
-    syslog_ng::destination {'d_logserver_server':
-      definition => 'file("/var/log/syslog-ng/${YEAR}/${YEAR}${MONTH}${DAY}/${HOST}.log");',
-    }
-      syslog_ng::log {'l_logserver_server':
-      sources      => [ 's_net,s_sys' ],
-      destinations => [ 'd_logserver_server' ]',
-    }
-    cron { compress:
-     # command => "find /var/log/syslog-ng/ -type f -mtime +7 -exec gzip {} \;",
-      command => 'find /var/log/syslog-ng/ -type f -mtime +7 -exec gzip {} \;',
-      user => root,
-      hour => 1,
-      minute => 0,
-      weekday => 0,
-    }
-  }
+#  if $role == "server" {
+#    syslog_ng::source {'s_sys':
+#      definition => 'type(udp),ip("0.0.0.0"),port(514)',
+#    }
+#    syslog_ng::destination {'d_logserver_server':
+#      definition => 'file("/var/log/syslog-ng/${YEAR}/${YEAR}${MONTH}${DAY}/${HOST}.log");',
+#    }
+#      syslog_ng::log {'l_logserver_server':
+#      sources      => [ 's_net,s_sys' ],
+#      destinations => [ 'd_logserver_server' ]',
+#    }
+#    cron { compress:
+#     # command => "find /var/log/syslog-ng/ -type f -mtime +7 -exec gzip {} \;",
+#      command => 'find /var/log/syslog-ng/ -type f -mtime +7 -exec gzip {} \;',
+#      user => root,
+#      hour => 1,
+#      minute => 0,
+#      weekday => 0,
+#    }
+#  }
 
 #
 # Definitions for the Syslog client
 #
 
-  if $role == "client" {
-    syslog_ng::destination {'d_logserver':
-      definition => 'type(udp), host(logvault-1.ring.net),port(514);',
-    }
-    syslog_ng::log {'l_logserver':
-    sources      => [ 's_sys' ],
-    destinations => [ 'd_logserver' ]',
-    }
-  }
+#  if $role == "client" {
+#    syslog_ng::destination {'d_logserver':
+#      definition => 'type(udp), host(logvault-1.ring.net),port(514);',
+#    }
+#    syslog_ng::log {'l_logserver':
+#    sources      => [ 's_sys' ],
+#    destinations => [ 'd_logserver' ]',
+#    }
+#  }
 
 }
-
-
 
