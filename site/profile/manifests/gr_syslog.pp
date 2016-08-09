@@ -22,5 +22,6 @@ class profile::gr_syslog {
     ensure => file,
     source => 'puppet:///modules/my_site/gr_syslog-ng.txt',
     require => Package['syslog-ng'], 
+    notify  => Service['syslog-ng'],  # this sets up the relationship
   } 
 }
