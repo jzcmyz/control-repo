@@ -8,16 +8,10 @@ class profile::syslogx {
 
 # For debugging
 # notify{"syslog-ng role = $role":}
-
 #
-#  disable the rsyslog service
-#
-#  service {'rsyslog':
-#    ensure => stopped,
-#    enable => false,
-#  }
 
   class {'syslog_ng':
+    version => '3.5',
 #    manage_package => true,
 #    modules => ['redis'],
   }
