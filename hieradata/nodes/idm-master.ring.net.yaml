@@ -2,11 +2,16 @@
 
 site::testmsg::level: "from %{::clientcert}.yaml"
 
-collectd::plugins:
-  bind: 
-    url: "http://localhost:8053/"
-
-#  cpu:    {}
-#  disk:   {}
-#  load:   {}
-#  memory: {}
+#collectd::plugins:
+#  bind: {}
+#collectd::plugins::bind::url: 'http://localhost:8053/'
+#  bind:
+#  #    url: 'http://localhost:8053/'
+#
+#  #    url: "http://localhost:8053/"
+#
+#  #  cpu:    {}
+#  #  disk:   {}
+#  #  load:   {}
+#  #  memory: {}
+#  ~
