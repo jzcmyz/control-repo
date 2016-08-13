@@ -2,6 +2,8 @@
 
 site::testmsg::level: "from %{::clientcert}.yaml"
 
+syslog-ng::role: server
+
 network::gateway: 192.168.1.254
 network::interfaces_hash:
   ens32:

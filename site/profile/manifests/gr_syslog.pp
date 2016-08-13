@@ -25,9 +25,6 @@ class profile::gr_syslog {
     }
   }
 
-     
-  }
-# ensure apache2 service is running
   service { 'syslog-ng':
     ensure => running,
   }

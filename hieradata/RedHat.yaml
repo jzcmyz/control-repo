@@ -34,3 +34,4 @@ redhat7::packages:
   - system-storage-manager
   - tmpwatch
 
+syslog-ng::role: client
