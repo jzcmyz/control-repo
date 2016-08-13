@@ -9,10 +9,24 @@ class profile::gr_syslog {
 # For debugging
 # notify{"syslog-ng role = $role":}
 #
-  package { 'syslog-ng':
+  package { 'syslog-ng' :
     ensure => installed,
   }
+ 
+  if $role == 'server' {
+    package { 'syslog-ng-redis' :
+      ensure => installed,
+    }
+    file { '/etc/syslog-ng/conf.d/gr_syslog-ng_archiver.conf':
+      ensure => file,
+      source => 'puppet:///modules/my_site/gr_syslog-ng_archiver.conf',
+      require => Package['syslog-ng'],
+      notify  => Service['syslog-ng'],  # this sets up the relationship
+    }
+  }
 
+     
+  }
 # ensure apache2 service is running
   service { 'syslog-ng':
     ensure => running,
