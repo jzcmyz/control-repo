@@ -34,25 +34,15 @@ class my_fw::pre {
     dport => 123,
   }->
   firewall { '010 open Syslog port 514':
-    proto => [ 'tcp', 'udp' ],
+    proto => udp,
     action => accept,
     dport => 514,
   }->
-#  firewall { '010 open Puppet port 8140':
-#    proto => tcp,
-#    action => accept,
-#    dport => 8140,
-#  }->
-#  firewall { '010 open mcollective unencrypted port 61613':
-#    proto => tcp,
-#    action => accept,
-#    dport => 61613,
-#  }->
-#  firewall { '011 open mcollective SSL port 61614':
-#    proto => 'tcp',
-#    action => accept,
-#    dport => 61614,
-#  }->
+  firewall { '011 open Puppet port 601':
+    proto => tcp,
+    action => accept,
+    dport => 601,
+  }->
   firewall { '024 open nfsv4 port 2049':
     proto => tcp,
     action => accept,
