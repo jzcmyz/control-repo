@@ -7,8 +7,11 @@ class profile::grafanax {
   }
 
   class {'grafana':
-    install_method => 'repo',
-    manage_package_repo => true,
+#    install_method => 'repo',
+#    manage_package_repo => true,
+    install_method  => 'package',
+    version         => '3.1.1',
+    rpm_iteration   => '1470047149',
   }
 
 }
