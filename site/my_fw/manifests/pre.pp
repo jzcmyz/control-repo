@@ -38,7 +38,7 @@ class my_fw::pre {
     action => accept,
     dport => 514,
   }->
-  firewall { '011 open Puppet port 601':
+  firewall { '011 open Syslog port 601':
     proto => tcp,
     action => accept,
     dport => 601,
