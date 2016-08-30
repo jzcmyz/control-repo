@@ -1,0 +1,5 @@
+---
+
+site::testmsg::level: "from %{::clientcert}.yaml"
+
+syslog-ng::role: server
