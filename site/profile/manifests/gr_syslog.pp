@@ -12,6 +12,10 @@ class profile::gr_syslog {
   package { 'syslog-ng' :
     ensure => installed,
   }
+
+  package {'rsyslog':
+    ensure => absent,
+  }
  
   if $role == 'server' {
     package { 'syslog-ng-redis' :
