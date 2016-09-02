@@ -8,10 +8,10 @@ class profile::gr_logstash {
 
   include profile::gr_java
 
-  yumrepo {'logstash-2.1':
-    name => 'logstash-2.1',
-    descr => 'Logstash repository for 2.1.x packages',
-    baseurl => 'http://packages.elastic.co/logstash/2.1/centos',
+  yumrepo {'logstash-2.4':
+    name => 'logstash-2.4',
+    descr => 'Logstash repository for 2.4.x packages',
+    baseurl => 'http://packages.elastic.co/logstash/2.4/centos',
     gpgkey => 'http://packages.elastic.co/GPG-KEY-elasticsearch',
     enabled => true,
     gpgcheck => true,
