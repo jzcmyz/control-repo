@@ -10,6 +10,7 @@ mod "camptocamp/systemd"
 mod "CraigWatson1987/vmwaretools"
 mod "derdanne/nfs",                     '0.0.14'
 mod "elasticsearch/logstash",           '0.6.4'
+mod "electrical/file_concat",           :latest
 mod "example42/network"
 mod "garethr/docker",			:latest
 mod "golja/influxdb",			:latest
