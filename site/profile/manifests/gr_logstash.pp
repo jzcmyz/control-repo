@@ -24,30 +24,30 @@ class profile::gr_logstash {
     }
   }
 
-#  logstash::configfile { 'inputs.conf':
-#    source => "puppet:///modules/logstash/inputs.conf",
-#    order => 1,
-#  }
+  logstash::configfile { 'inputs.conf':
+    source => "puppet:///modules/my_site/inputs.conf",
+    order => 1,
+  }
 
 ##  logstash::configfile { 'filter.conf':
 ##    source => "puppet:///modules/logstash/filter.conf",
 ##    order => 10,
 ##  }
 
-#  logstash::configfile { '001-filter-syslog.conf':
-#    source => "puppet:///modules/logstash/001-filter-syslog.conf",
-#    order => 10,
-#  }
+  logstash::configfile { '001-filter-syslog.conf':
+    source => "puppet:///modules/my_site/001-filter-syslog.conf",
+    order => 10,
+  }
 
-#  logstash::configfile { '002-filter-pfsense.conf':
-#    source => "puppet:///modules/logstash/002-filter-pfsense.conf",
-#    order => 11,
-#  }
+  logstash::configfile { '002-filter-pfsense.conf':
+    source => "puppet:///modules/my_site/002-filter-pfsense.conf",
+    order => 11,
+  }
 
-#  logstash::configfile { 'outputs.conf':
-#    source => "puppet:///modules/logstash/outputs.conf",
-#    order => 30,
-#  }
+  logstash::configfile { 'outputs.conf':
+    source => "puppet:///modules/my_site/outputs.conf",
+    order => 30,
+  }
 
 }
 
