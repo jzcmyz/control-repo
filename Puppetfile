@@ -17,6 +17,7 @@ mod "golja/influxdb",			:latest
 mod "herculesteam/augeasproviders_core", :latest
 mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
+mod "lesaux/kibana4",			:latest
 mod "nanliu/staging",			:latest
 mod "maestrodev/wget",			:latest
 mod "puppet/collectd",			:latest
