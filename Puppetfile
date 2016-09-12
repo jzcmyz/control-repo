@@ -2,7 +2,8 @@ forge "http://forge.puppetlabs.com"
 
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
-mod "bfraser/grafana"
+#
+#mod "bfraser/grafana"    <== Use GIT repo
 mod "camptocamp/archive",		:latest
 mod "camptocamp/augeas",		:latest
 mod "camptocamp/postfix",		:latest
@@ -46,3 +47,7 @@ mod "WhatsARanjit/plexmediaserver"
 mod 'dhcp',
   :git    => 'https://github.com/voxpupuli/puppet-dhcp.git'
 #
+mod 'grafana',
+  :git    => 'https://github.com/bfraser/puppet-grafana.git'
+#
+
