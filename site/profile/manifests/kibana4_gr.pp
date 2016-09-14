@@ -27,8 +27,7 @@ class profile::kibana4i_gr {
     config            => {
         'server.port'           => 5601,
         'server.host'           => '0.0.0.0',
-#        'elasticsearch.url'     => 'http://elastic-3.ring.net:9200',
-        'elasticsearch.url'     => 'http://logvault-1.ring.net:9200',
+        'elasticsearch.url'     => 'http://elastic-1.ring.net:9200',
         }
   }
 
