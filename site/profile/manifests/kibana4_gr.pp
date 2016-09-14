@@ -1,4 +1,4 @@
-class profile::kibana4i_gr {
+class profile::kibana4_gr {
 
 #
 #
@@ -15,10 +15,10 @@ class profile::kibana4i_gr {
 #    elasticsearch_url  => "http://loghost.ring.net:9200",
 #  }
 
-  class { '::kibana4':
-    package_ensure    => '4.3.0-linux-x64',
-    package_provider  => 'archive',
-    symlink           => true,
+  class { 'kibana4':
+#    package_ensure    => '4.3.0-linux-x64',
+#    package_provider  => 'archive',
+#    symlink           => true,
 #    manage_user       => true,
 #    kibana4_user      => kibana4,
 #    kibana4_group     => kibana4,
