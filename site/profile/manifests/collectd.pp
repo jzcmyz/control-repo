@@ -1,6 +1,20 @@
 class profile::collectd {
 
 
+  ## Hiera lookups
+  $role = hiera('collectd::role')
+
+  if $role == 'listener' {
+    firewall { '258 open collectd port 25826':
+      proto => tcp,
+      action => accept,
+      dport => 25826,
+    }
+    collectd::plugin::network::listener{['influxdb-1.ring.net']:
+      port => 25826,
+    }
+  }
+
 #
 # http://www.pkill.info/linux/man/8-collectd_selinux/
 # and
@@ -10,18 +24,6 @@ class profile::collectd {
   selboolean {'collectd_tcp_network_connect':
     persistent => true,
     value => on,
-  }
-
-  if $operatingsystem == "CentOS" {
-    case $operatingsystemrelease {
-        /^7.*/: {
-        }
-        /^6.*/: {
-            class {'repoforge' :
-              enabled => ['rpmforge', 'testing'],
-            }
-        }
-    }
   }
 
   class {'::collectd':
@@ -48,11 +50,6 @@ class profile::collectd {
     reportbytes => true,
   }
 
-#  collectd::plugin::write_graphite::carbon {'my_graphite':
-#    graphitehost => 'graphite-1.ring.net',
-#  }
-
-#
 # The "server" sends collectd stats
 #
   collectd::plugin::network::server{['influxdb-1.ring.net']:
