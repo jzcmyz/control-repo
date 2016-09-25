@@ -6,13 +6,13 @@ class profile::influxdbx {
 # For debugging
 # notify{"syslog-ng role = $role":}
 #
-  if $role == 'listener' {
-    firewall { '258 open collectd port 25826':
-      proto => tcp,
-      action => accept,
-      dport => 25826,
-    }
-  }
+#  if $role == 'listener' {
+#    firewall { '258 open collectd port 25826':
+#      proto => tcp,
+#      action => accept,
+#      dport => 25826,
+#    }
+#  }
 
   firewall { '808 open influxdb ports 8083 8086':
     proto => tcp,
