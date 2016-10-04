@@ -14,4 +14,5 @@ puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
 puppet_enterprise::master::code_manager::authenticate_webhook: false
 
 syslog-ng::role: client
+collectd::role: server
 

@@ -14,7 +14,7 @@ mod "elasticsearch/logstash",           '0.6.4'
 mod "electrical/file_concat",           :latest
 mod "example42/network"
 mod "garethr/docker",			:latest
-mod "golja/influxdb",			:latest
+#mod "golja/influxdb",			:latest
 mod "herculesteam/augeasproviders_core", :latest
 mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
@@ -49,5 +49,9 @@ mod 'dhcp',
 #
 mod 'grafana',
   :git    => 'https://github.com/bfraser/puppet-grafana.git'
+
+mod 'influxdb',
+  :git    => 'https://github.com/n1tr0g/golja-influxdb.git'
+
 #
 
