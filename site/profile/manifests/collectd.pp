@@ -50,6 +50,10 @@ class profile::collectd {
     reportbytes => true,
   }
 
+  class {'collectd::plugin::syslog':
+    log_level => 'info'
+  }
+
 # The "server" sends collectd stats
 #
   collectd::plugin::network::server{['influxdb-1.ring.net']:
