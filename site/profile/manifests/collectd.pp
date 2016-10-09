@@ -4,6 +4,10 @@ class profile::collectd {
   ## Hiera lookups
   $role = hiera('collectd::role')
 
+#
+# This block is configured on the Collectd server to recieve Collectd stats sent from Collectd Clients
+# The Collectd server listens on this port. Firewall port needs to opened 
+#
   if $role == 'listener' {
     firewall { '258 open collectd port 25826':
       proto => tcp,
@@ -40,6 +44,12 @@ class profile::collectd {
     valuespercentage => true,
   }
 
+  class { 'collectd::plugin::df':
+    mountpoints    => ['/u'],
+    fstypes        => ['nfs','tmpfs','autofs','gpfs','proc','devpts','devtmpfs','sysfs','cgroup','securityfs','rpc_pipefs'],
+    ignoreselected => true,
+  }
+
   collectd::plugin {'interface': }
   collectd::plugin {'load': }
   collectd::plugin {'memory': }
@@ -50,7 +60,8 @@ class profile::collectd {
     reportbytes => true,
   }
 
-# The "server" sends collectd stats
+#
+# Send collectd stats to this server
 #
   collectd::plugin::network::server{['influxdb-1.ring.net']:
     port => 25826,
