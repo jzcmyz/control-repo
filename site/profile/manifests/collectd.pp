@@ -10,7 +10,7 @@ class profile::collectd {
 #
   if $role == 'listener' {
     firewall { '258 open collectd port 25826':
-      proto => tcp,
+      proto => udp,
       action => accept,
       dport => 25826,
     }
