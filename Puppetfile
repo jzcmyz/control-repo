@@ -18,6 +18,7 @@ mod "garethr/docker",			:latest
 mod "herculesteam/augeasproviders_core", :latest
 mod "herculesteam/augeasproviders_mounttab", :latest
 mod "herculesteam/augeasproviders_ssh", :latest
+mod 'jlambert121-curator',              :latest
 mod "lesaux/kibana4",			:latest
 mod "nanliu/staging",			:latest
 mod "maestrodev/wget",			:latest
