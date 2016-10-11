@@ -1,4 +1,4 @@
-class profile::gr_logstash {
+class profile::logstash_gr {
 
 #
 # Logstash requires Java....

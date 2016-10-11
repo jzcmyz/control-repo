@@ -1,4 +1,4 @@
-class profile::gr_elasticsearch {
+class profile::elasticsearch_gr {
 
   firewall { '920 open Elasticsearch port 9200':
     proto => tcp,
