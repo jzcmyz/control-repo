@@ -6,7 +6,7 @@ class profile::gr_logstash {
 # Java is installed in the Elasticsearch Module
 #
 
-  include profile::gr_java
+  include profile::java_gr
 
   yumrepo {'logstash-2.4':
     name => 'logstash-2.4',

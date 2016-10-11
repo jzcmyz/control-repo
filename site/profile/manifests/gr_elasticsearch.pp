@@ -16,7 +16,7 @@ class profile::gr_elasticsearch {
 # Elasticsearch is built using Java, and requires at least Java 7 in order to run.
 #
 
-  include profile::gr_java
+  include profile::java_gr
 
 # Mount the volume for /elasticsearch
 # This is broken

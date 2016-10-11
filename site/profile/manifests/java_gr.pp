@@ -1,4 +1,4 @@
-class profile::gr_java {
+class profile::java_gr {
 
   class { 'java':
     distribution => 'jre',
