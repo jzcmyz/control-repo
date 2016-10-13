@@ -11,7 +11,7 @@ class profile::base {
   include profile::postfixx
   include profile::repo_centosx
   include profile::sshx
-  include profile::gr_syslog
+  include profile::syslog_gr
   include profile::vmwaretoolsx
 
 }

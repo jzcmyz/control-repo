@@ -1,4 +1,4 @@
-class profile::gr_syslog {
+class profile::syslog_gr {
 
 #
 #  get stuff out of hiera
