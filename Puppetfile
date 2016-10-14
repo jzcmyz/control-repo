@@ -26,6 +26,7 @@ mod "puppet/collectd"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt"
 mod "puppetlabs/concat"
+mod 'puppetlabs-dhcp'
 # mod "puppetlabs/dhcp" <= renamed or obsoleted
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"
@@ -45,8 +46,8 @@ mod "WhatsARanjit/plexmediaserver"
 #  Gavin Was here
   
 # Modules from Git
-mod 'dhcp',
-  :git    => 'https://github.com/voxpupuli/puppet-dhcp.git'
+#mod 'dhcp',
+#  :git    => 'https://github.com/voxpupuli/puppet-dhcp.git'
 #
 mod 'grafana',
   :git    => 'https://github.com/bfraser/puppet-grafana.git'
