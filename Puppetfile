@@ -25,7 +25,7 @@ mod "maestrodev/wget"
 mod "puppet/collectd"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt"
-mod "puppetlabs/concat"
+mod "puppetlabs/concat", '2.0.0'
 mod "puppetlabs/dhcp" 
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"
