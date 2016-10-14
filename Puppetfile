@@ -13,29 +13,29 @@ mod "derdanne/nfs"
 mod "elasticsearch/logstash"
 mod "electrical/file_concat"
 mod "example42/network"
-mod "garethr/docker",			:latest
+mod "garethr/docker"
 #mod "golja/influxdb",			:latest
-mod "herculesteam/augeasproviders_core", :latest
-mod "herculesteam/augeasproviders_mounttab", :latest
-mod "herculesteam/augeasproviders_ssh", :latest
-mod 'jlambert121-curator',              :latest
-mod "lesaux/kibana4",			:latest
-mod "nanliu/staging",			:latest
-mod "maestrodev/wget",			:latest
-mod "puppet/collectd",			:latest
-mod "puppetlabs/apache",                '1.10.0' 
-mod "puppetlabs/apt",			:latest
-mod "puppetlabs/concat",		:latest
-mod "puppetlabs/dhcp",			:latest
+mod "herculesteam/augeasproviders_core"
+mod "herculesteam/augeasproviders_mounttab"
+mod "herculesteam/augeasproviders_ssh"
+mod 'jlambert121-curator'
+mod "lesaux/kibana4"
+mod "nanliu/staging"
+mod "maestrodev/wget"
+mod "puppet/collectd"
+mod "puppetlabs/apache"
+mod "puppetlabs/apt"
+mod "puppetlabs/concat"
+mod "puppetlabs/dhcp"
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"
-mod "puppetlabs/mount_providers",	:latest
-mod "puppetlabs/ntp",			'4.2.0'
-mod "puppetlabs/stdlib",		:latest
-mod "stahnma/epel",			:latest
-mod "stankevich/python",		:latest
-mod "treydock/gpg_key",			:latest
-mod "treydock/repo_centos",		:latest
+mod "puppetlabs/mount_providers"
+mod "puppetlabs/ntp"
+mod "puppetlabs/stdlib"
+mod "stahnma/epel"
+mod "stankevich/python"
+mod "treydock/gpg_key"
+mod "treydock/repo_centos"
 mod "WhatsARanjit/plexmediaserver"
 #mod "WhatsARanjit/transmission"
 
