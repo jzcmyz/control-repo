@@ -4,14 +4,14 @@ forge "http://forge.puppetlabs.com"
 # Versions should be updated to be the latest at the time you start
 #
 #mod "bfraser/grafana"    <== Use GIT repo
-mod "camptocamp/archive",		:latest
-mod "camptocamp/augeas",		:latest
-mod "camptocamp/postfix",		:latest
+mod "camptocamp/archive"
+mod "camptocamp/augeas"
+mod "camptocamp/postfix"
 mod "camptocamp/systemd"
 mod "CraigWatson1987/vmwaretools"
-mod "derdanne/nfs",                     '0.0.14'
-mod "elasticsearch/logstash",           '0.6.4'
-mod "electrical/file_concat",           :latest
+mod "derdanne/nfs"
+mod "elasticsearch/logstash"
+mod "electrical/file_concat"
 mod "example42/network"
 mod "garethr/docker",			:latest
 #mod "golja/influxdb",			:latest
@@ -28,7 +28,7 @@ mod "puppetlabs/apt",			:latest
 mod "puppetlabs/concat",		:latest
 mod "puppetlabs/dhcp",			:latest
 mod "puppetlabs/firewall"
-mod "puppetlabs/java",                  '1.6.0'
+mod "puppetlabs/java"
 mod "puppetlabs/mount_providers",	:latest
 mod "puppetlabs/ntp",			'4.2.0'
 mod "puppetlabs/stdlib",		:latest
