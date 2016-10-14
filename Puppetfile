@@ -26,8 +26,7 @@ mod "puppet/collectd"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt"
 mod "puppetlabs/concat"
-mod 'puppetlabs-dhcp'
-# mod "puppetlabs/dhcp" <= renamed or obsoleted
+mod "puppetlabs/dhcp" 
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"
 mod "puppetlabs/mount_providers"
