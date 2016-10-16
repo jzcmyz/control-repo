@@ -26,7 +26,7 @@ mod "puppet/collectd"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt"
 mod "puppetlabs/concat", '2.0.0'
-mod "puppetlabs/dhcp" 
+#mod "puppetlabs/dhcp" 
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"
 mod "puppetlabs/mount_providers"
@@ -45,8 +45,8 @@ mod "WhatsARanjit/plexmediaserver"
 #  Gavin Was here
   
 # Modules from Git
-#mod 'dhcp',
-#  :git    => 'https://github.com/voxpupuli/puppet-dhcp.git'
+mod 'dhcp',
+  :git    => 'https://github.com/voxpupuli/puppet-dhcp.git'
 #
 mod 'grafana',
   :git    => 'https://github.com/bfraser/puppet-grafana.git'
