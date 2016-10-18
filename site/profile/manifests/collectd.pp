@@ -8,16 +8,16 @@ class profile::collectd {
 # This block is configured on the Collectd server to recieve Collectd stats sent from Collectd Clients
 # The Collectd server listens on this port. Firewall port needs to opened 
 #
-  if $role == 'listener' {
-    firewall { '258 open collectd port 25826':
-      proto => udp,
-      action => accept,
-      dport => 25826,
-    }
-    collectd::plugin::network::listener{['influxdb-1.ring.net']:
-      port => 25826,
-    }
-  }
+#  if $role == 'listener' {
+#    firewall { '258 open collectd port 25826':
+#      proto => udp,
+#      action => accept,
+#      dport => 25826,
+#    }
+#    collectd::plugin::network::listener{['influxdb-1.ring.net']:
+#      port => 25826,
+#    }
+#  }
 
 #
 # http://www.pkill.info/linux/man/8-collectd_selinux/
