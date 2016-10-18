@@ -5,24 +5,19 @@ class profile::collectd {
   $role = hiera('collectd::role')
 
 #
-# This block is configured on the Collectd server to recieve Collectd stats sent from Collectd Clients
-# The Collectd server listens on this port. Firewall port needs to opened 
+# This block is configured on the Collectd server to receive Collectd stats sent from Collectd Clients
+# The Collectd server listens on this port. 
 #
-#  if $role == 'listener' {
-#    firewall { '258 open collectd port 25826':
-#      proto => udp,
-#      action => accept,
-#      dport => 25826,
-#    }
-#    collectd::plugin::network::listener{['influxdb-1.ring.net']:
-#      port => 25826,
-#    }
-#  }
+  if $role == 'listener' {
+    firewall { '258 open collectd port 25826':
+      proto => udp,
+      action => accept,
+      dport => 25826,
+    }
+  }
 
 #
-# http://www.pkill.info/linux/man/8-collectd_selinux/
-# and
-# http://collectd.1051573.n5.nabble.com/collectd-collectd-3112-write-graphite-plugin-Connecting-to-localhost-2003-via-tcp-failed-td5707762.html
+# Refer to http://www.pkill.info/linux/man/8-collectd_selinux/
 #
 
   selboolean {'collectd_tcp_network_connect':
@@ -35,7 +30,6 @@ class profile::collectd {
     recurse => true,
     purge_config => true,
     minimum_version => '5.4',
-   # version => 'latest',
   }
 
   class {'collectd::plugin::cpu':
