@@ -10,7 +10,5 @@ elasticsearch::config::node.master: true
 
 elasticsearch::defaults:
   ES_HEAP_SIZE: '512m'
-    MAX_OPEN_FILES: 65535
-      MAX_LOCKED_MEMORY: 'unlimited'
-
-
+  MAX_OPEN_FILES: 65535
+  MAX_LOCKED_MEMORY: 'unlimited'
