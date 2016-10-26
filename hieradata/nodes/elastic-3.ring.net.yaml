@@ -1,0 +1,16 @@
+---
+testmsg: 'This is from elastic-3.ring.net.yaml'
+
+#
+# https://github.com/elastic/puppet-elasticsearch/issues/150
+#
+
+elasticsearch::config::node.data: true
+elasticsearch::config::node.master: true
+
+elasticsearch::defaults:
+  ES_HEAP_SIZE: '512m'
+    MAX_OPEN_FILES: 65535
+      MAX_LOCKED_MEMORY: 'unlimited'
+
+
