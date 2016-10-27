@@ -7,7 +7,6 @@ class profile::base {
   include profile::networkx
   include profile::ntp
   include profile::packages
-#  include profile::puppetmaster
 #  include profile::postfixx
   include profile::repo_centosx
   include profile::sshx
