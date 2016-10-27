@@ -42,8 +42,8 @@ class profile::elasticsearch_gr {
     gpgcheck => true,
   }
 
-  $node_data = true
-  $node_master = true
+  $node_data = 'true'
+  $node_master = 'true'
   $elasticsearch_defaults = hiera('elasticsearch::defaults')
 
 
