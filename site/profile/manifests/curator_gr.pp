@@ -20,12 +20,32 @@ class profile::curator_gr {
     provider     => 'yum',
   }
 
-  curator::job { 'marvel_delete':
-    command      => 'delete',
-    prefix       => '.marvel-',
-    older_than   => 30,
-    cron_hour    => 7,
-    cron_minute  => 02
+  curator::action { 'delete_indices':
+    action                => 'delete_indices',
+    continue_if_exception => 'True',
+    filters               => [
+      {
+        'filtertype' => 'pattern',
+        'value'      => 'logstash-',
+        'kind'       => 'prefix',
+      },
+      {
+        'filtertype' => 'age',
+        'direction'  => 'older',
+        'timestring' => '"%Y.%m.%d"',
+        'unit'       => 'days',
+        'unit_count' => '7',
+        'source'     => 'name',
+      }
+    ]
+  }
+
+  cron { "curator_run":
+    ensure  => 'present',
+    command => '/bin/curator /root/.curator/actions.yml >/dev/null',
+    hour    => 1,
+    minute  => 10,
+    weekday => '*',
   }
 }
 
