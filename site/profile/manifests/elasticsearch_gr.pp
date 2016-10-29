@@ -42,9 +42,10 @@ class profile::elasticsearch_gr {
     gpgcheck => true,
   }
 
-  $node_data = hiera('elasticsearch::config::node.data')
-  $node_master = hiera('elasticsearch::config::node.master')
-  $elasticsearch_defaults = hiera('elasticsearch::defaults')
+# Hiera is busted... need to work out what is wrong
+#  $node_data = hiera('elasticsearch::config::node.data')
+#  $node_master = hiera('elasticsearch::config::node.master')
+#  $elasticsearch_defaults = hiera('elasticsearch::defaults')
 
   $config_hash = {
     'ES_HEAP_SIZE' => '512m',
@@ -68,10 +69,10 @@ class profile::elasticsearch_gr {
     before => Mounttab['/elasticsearch'],
     config => {
       'cluster.name'            => 'elastic',
-      'node.data'               => "$node_data",
-#      'node.data'               => "true",
-      'node.master'             => "$node_master",
-#      'node.master'             => "true",
+#      'node.data'               => "$node_data",
+      'node.data'               => "true",
+#      'node.master'             => "$node_master",
+      'node.master'             => "true",
       'node.name'               => "${::hostname}",
       'network.host'            => "${::ipaddress}",
  #     'bootstrap.mlockall'     => true, does not work... OS changes need to be made
