@@ -1,14 +1,11 @@
-# /etc/puppetlabs/code/environments/production/hiera.yaml
 ---
 version: 4
-# datadir: data
+datadir: "hieradata"
 hierarchy:
   - name: "Nodes"
     backend: yaml
     path: "nodes/%{trusted.certname}"
-
   - name: "%{::osfamily}"
     backend: yaml
-
   - name: "common"
     backend: yaml
