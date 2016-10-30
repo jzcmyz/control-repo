@@ -44,6 +44,7 @@ class profile::elasticsearch_gr {
 
 # Hiera is busted... need to work out what is wrong
 #  $node_data = hiera('elasticsearch::config::node.data')
+   $node_data = lookup('elasticsearch::config::node.data')
 #  $node_master = hiera('elasticsearch::config::node.master')
 #  $elasticsearch_defaults = hiera('elasticsearch::defaults')
 
@@ -69,8 +70,8 @@ class profile::elasticsearch_gr {
     before => Mounttab['/elasticsearch'],
     config => {
       'cluster.name'            => 'elastic',
-#      'node.data'               => "$node_data",
-      'node.data'               => "true",
+      'node.data'               => "$node_data",
+#      'node.data'               => "true",
 #      'node.master'             => "$node_master",
       'node.master'             => "true",
       'node.name'               => "${::hostname}",

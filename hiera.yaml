@@ -5,7 +5,7 @@ hierarchy:
   - name: "Nodes"
     backend: yaml
     path: "nodes/%{trusted.certname}"
-  - name: "%{::osfamily}"
+  - name: "%{facts.os.family}"
     backend: yaml
   - name: "common"
     backend: yaml
