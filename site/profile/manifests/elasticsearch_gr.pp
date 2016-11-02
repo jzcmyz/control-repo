@@ -43,10 +43,9 @@ class profile::elasticsearch_gr {
   }
 
 # Hiera is busted... need to work out what is wrong
-#  $node_data = hiera('elasticsearch::config::node.data')
-   $node_data = lookup('elasticsearch::config::node.data')
-#  $node_master = hiera('elasticsearch::config::node.master')
-#  $elasticsearch_defaults = hiera('elasticsearch::defaults')
+  $node_data = hiera('elasticsearch::config::node.data')
+  $node_master = hiera('elasticsearch::config::node.master')
+  $elasticsearch_defaults = hiera('elasticsearch::defaults')
 
   $config_hash = {
     'ES_HEAP_SIZE' => '512m',
