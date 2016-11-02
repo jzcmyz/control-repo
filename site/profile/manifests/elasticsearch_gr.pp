@@ -43,8 +43,8 @@ class profile::elasticsearch_gr {
   }
 
 # Hiera is busted... need to work out what is wrong
-  $node_data = hiera('elasticsearch::config::node.data')
-  $node_master = hiera('elasticsearch::config::node.master')
+  $node_data = hiera('elasticsearch::config::node_data')
+  $node_master = hiera('elasticsearch::config::node_master')
   $elasticsearch_defaults = hiera('elasticsearch::defaults')
 
   $config_hash = {
@@ -70,9 +70,7 @@ class profile::elasticsearch_gr {
     config => {
       'cluster.name'            => 'elastic',
       'node.data'               => "$node_data",
-#      'node.data'               => "true",
-#      'node.master'             => "$node_master",
-      'node.master'             => "true",
+      'node.master'             => "$node_master",
       'node.name'               => "${::hostname}",
       'network.host'            => "${::ipaddress}",
  #     'bootstrap.mlockall'     => true, does not work... OS changes need to be made
