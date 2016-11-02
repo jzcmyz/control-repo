@@ -5,8 +5,8 @@ testmsg: 'This is from elastic-3.ring.net.yaml'
 # https://github.com/elastic/puppet-elasticsearch/issues/150
 #
 
-elasticsearch::config::node.data: true
-elasticsearch::config::node.master: true
+elasticsearch::config::node_data: true
+elasticsearch::config::node_master: true
 
 elasticsearch::defaults:
   ES_HEAP_SIZE: '512m'

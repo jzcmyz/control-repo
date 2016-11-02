@@ -47,18 +47,18 @@ class profile::elasticsearch_gr {
   $node_master = hiera('elasticsearch::config::node_master')
   $elasticsearch_defaults = hiera('elasticsearch::defaults')
 
-  $config_hash = {
-    'ES_HEAP_SIZE' => '512m',
-    'MAX_OPEN_FILES' => '65535',
-    'MAX_LOCKED_MEMORY' => 'unlimited',
-  }
+#  $config_hash = {
+#    'ES_HEAP_SIZE' => '512m',
+#    'MAX_OPEN_FILES' => '65535',
+#    'MAX_LOCKED_MEMORY' => 'unlimited',
+#  }
 #  notify{"elasticsearch_defaults = $elasticsearch_defaults":}
 
   class {'elasticsearch':
     before => Yumrepo['elasticsearch-2.x'],
     java_install => false,
     datadir => '/elasticsearch',
-    init_defaults => $config_hash,
+    init_defaults => $elasticsearch_defaults,
     config => {
       'http.cors.enabled' => true,
       'discovery.zen.ping.multicast.enabled' => false,
