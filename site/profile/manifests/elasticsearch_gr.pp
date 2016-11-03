@@ -75,7 +75,7 @@ class profile::elasticsearch_gr {
       'network.host'            => "${::ipaddress}",
  #     'bootstrap.mlockall'     => true, does not work... OS changes need to be made
  #     'discovery.zen.ping.unicast.hosts'       => '["logvault-1.ring.net","elastic-1.ring.net","elastic-2.ring.net","elastic-3.ring.net"]',
-      'discovery.zen.ping.unicast.hosts'        => '["elastic-1.ring.net","elastic-2.ring.net","elastic-3.ring.net"]',
+      'discovery.zen.ping.unicast.hosts'        => 'elastic-1.ring.net,elastic-2.ring.net,elastic-3.ring.net',
       'discovery.zen.minimum_master_nodes'      => 1,
     }
   }
