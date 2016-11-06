@@ -40,6 +40,7 @@ mod "stankevich/python"
 mod "treydock/gpg_key"
 mod "treydock/repo_centos"
 mod "WhatsARanjit/plexmediaserver"
+mod "yo61/logrotate"
 #mod "WhatsARanjit/transmission"
 
 # Modules from Git
