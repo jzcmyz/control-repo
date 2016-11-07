@@ -27,6 +27,13 @@ class profile::syslog_gr {
       require => Package['syslog-ng'],
       notify  => Service['syslog-ng'],  # this sets up the relationship
     }
+    cron { compress:
+      command => 'find /var/log/syslog-ng/ -name "*.log" -type f -mtime +7 -exec gzip {} \;',
+      user => root,
+      hour => 1,
+      minute => 0,
+      weekday => 0,
+    } 
   }
 
   service { 'syslog-ng':
