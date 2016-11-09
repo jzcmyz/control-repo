@@ -37,13 +37,20 @@ class profile::http {
     value => on,
   }
 
-#  apache::vhost { 'apache.ring.net':
-#    port => 80,
-#    docroot => '/var/www/html',
-#  }
+#  $vhosts = hiera('apache::vhosts')
+#  create_resources('apache::vhost',$vhosts)
 
-  $vhosts = hiera('apache::vhosts')
-  create_resources('apache::vhost',$vhosts)
+  apache::vhost { 'apache-1.ring.net':
+    servername => 'apache-1.ring.net',
+    port       => '80',
+    docroot    => '/var/www/html',
+  }
+
+  apache::vhost { 'repo.ring.net':
+    servername => 'repo.ring.net',
+    port       => '80',
+    docroot    => '/srv/centos',
+  }
 
   collectd::plugin { 'apache': } # turn on Apache plugin within collectd
 
