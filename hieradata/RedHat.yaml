@@ -27,6 +27,7 @@ redhat6::packages:
   - policycoreutils-python
 
 redhat7::packages:
+  - git
   - net-tools
 #  - perl This package is also defined in the vmwaretools module
   - policycoreutils-python
