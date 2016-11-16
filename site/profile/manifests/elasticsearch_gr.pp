@@ -18,13 +18,6 @@ class profile::elasticsearch_gr {
 
   include profile::java_gr
 
-# Mount the volume for /elasticsearch
-# This is broken
-#  file { 'mountpoint':
-#    path => '/elasticsearchx',
-#    ensure => 'directory',
-#  }
-
   mounttab {'/elasticsearch':
     ensure      => present,
     fstype      => 'xfs',
@@ -33,14 +26,17 @@ class profile::elasticsearch_gr {
     provider    => augeas,
   }
 
-  yumrepo {'elasticsearch-2.x':
-    name => 'elasticsearch-2.x',
-    descr => 'Elasticsearch repository for 2.x packages',
-    baseurl => 'http://packages.elastic.co/elasticsearch/2.x/centos',
-    gpgkey => 'http://packages.elastic.co/GPG-KEY-elasticsearch',
-    enabled => true,
-    gpgcheck => true,
-  }
+#
+#  The elasticsearch repo is managed using Spacewalk
+#
+#  yumrepo {'elasticsearch-2.x':
+#    name => 'elasticsearch-2.x',
+#    descr => 'Elasticsearch repository for 2.x packages',
+#    baseurl => 'http://packages.elastic.co/elasticsearch/2.x/centos',
+#    gpgkey => 'http://packages.elastic.co/GPG-KEY-elasticsearch',
+#    enabled => true,
+#    gpgcheck => true,
+#  }
 
 # Hiera is busted... need to work out what is wrong
   $node_data = hiera('elasticsearch::config::node_data')
