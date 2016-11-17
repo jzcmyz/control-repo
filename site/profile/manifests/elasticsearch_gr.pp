@@ -51,7 +51,7 @@ class profile::elasticsearch_gr {
 #  notify{"elasticsearch_defaults = $elasticsearch_defaults":}
 
   class {'elasticsearch':
-    before => Yumrepo['elasticsearch-2.x'],
+#    before => Yumrepo['elasticsearch-2.x'],
     java_install => false,
     datadir => '/elasticsearch',
     init_defaults => $elasticsearch_defaults,
