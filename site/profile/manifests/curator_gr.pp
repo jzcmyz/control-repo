@@ -42,7 +42,7 @@ class profile::curator_gr {
 
   cron { "curator_run":
     ensure  => 'present',
-    command => '/bin/curator /root/.curator/actions.yml >/dev/null',
+    command => '/opt/elasticsearch-curator/curator /root/.curator/actions.yml >/dev/null',
     hour    => 1,
     minute  => 10,
     weekday => '*',
