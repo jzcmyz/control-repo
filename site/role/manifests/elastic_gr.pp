@@ -4,5 +4,6 @@ class role::elastic_gr {
   #All roles should include the base profile
   include profile::base
   include profile::elasticsearch_gr
+  include profile::curator_gr
 
 }
