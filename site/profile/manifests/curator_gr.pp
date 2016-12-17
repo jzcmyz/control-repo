@@ -17,7 +17,7 @@ class profile::curator_gr {
 
   class {'curator':
     package_name => 'python-elasticsearch-curator',
-    provider     => 'yum',
+    package_provider     => 'yum',
   }
 
   curator::action { 'delete_indices':
