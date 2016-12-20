@@ -6,18 +6,24 @@ class profile::curator_gr {
 # Java is installed in the Elasticsearch Module
 #
 
+#
+# Get stuff out of hiera
+#
+  ## Hiera lookups
+  $crontab = hiera('curator_gr::crontab')
+
   yumrepo {'curator-4':
-    name => 'curator-4',
-    descr => 'CentOS/RHEL 7 repository for Elasticsearch Curator 4.x packages',
-    baseurl => 'http://packages.elastic.co/curator/4/centos/7',
-    gpgkey => 'http://packages.elastic.co/GPG-KEY-elasticsearch',
-    enabled => true,
+    name     => 'curator-4',
+    descr    => 'CentOS/RHEL 7 repository for Elasticsearch Curator 4.x packages',
+    baseurl  => 'http://packages.elastic.co/curator/4/centos/7',
+    gpgkey   => 'http://packages.elastic.co/GPG-KEY-elasticsearch',
+    enabled  => true,
     gpgcheck => true,
   }
 
   class {'curator':
-    package_name => 'python-elasticsearch-curator',
-    package_provider     => 'yum',
+    package_name     => 'python-elasticsearch-curator',
+    package_provider => 'yum',
   }
 
   curator::action { 'delete_indices':
@@ -40,13 +46,16 @@ class profile::curator_gr {
     ]
   }
 
-  cron { "curator_run":
+if $crontab == true {
+  cron { 'curator_run':
     ensure  => 'present',
     command => '/opt/elasticsearch-curator/curator /root/.curator/actions.yml >/dev/null',
     hour    => 1,
     minute  => 10,
     weekday => '*',
   }
+}
+
 }
 
 

@@ -5,6 +5,8 @@ testmsg: 'This is from elastic-1.ring.net.yaml'
 # https://github.com/elastic/puppet-elasticsearch/issues/150
 #
 
+curator_gr::crontab: true
+
 elasticsearch::config::node_data: true
 elasticsearch::config::node_master: true
 
