@@ -1,5 +1,5 @@
 ---
-message: "This node is using common data"
+message: "This node is using Redhat.yaml"
 
 #Puppet Server Tuning
 puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
@@ -35,3 +35,4 @@ redhat7::packages:
   - tmpwatch
 
 syslog-ng::role: client
+curator_gr::crontab: false
