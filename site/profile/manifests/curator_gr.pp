@@ -6,7 +6,7 @@ class profile::curator_gr {
 # Java is installed in the Elasticsearch Module
 #
 
- yumrepo {'curator-4':
+  yumrepo {'curator-4':
     name => 'curator-4',
     descr => 'CentOS/RHEL 7 repository for Elasticsearch Curator 4.x packages',
     baseurl => 'http://packages.elastic.co/curator/4/centos/7',
@@ -34,7 +34,7 @@ class profile::curator_gr {
         'direction'  => 'older',
         'timestring' => '"%Y.%m.%d"',
         'unit'       => 'days',
-        'unit_count' => '7',
+        'unit_count' => '21',
         'source'     => 'name',
       }
     ]

@@ -1,3 +1,6 @@
+#
+# This class installs packages appropriate to the OS release
+#
 class profile::packages {
 
   ## Hiera lookups
@@ -7,11 +10,11 @@ class profile::packages {
 #  notify{"here it is $packages":}
 #  notify{"here it is $redhat7packages":}
 
-  if $operatingsystemmajrelease == "6" {
+  if $operatingsystemmajrelease == '6' {
     package { $redhat6packages: }
   }
 
-  if $operatingsystemmajrelease == "7" {
+  if $operatingsystemmajrelease == '7' {
     package { $redhat7packages: }
   }
 
