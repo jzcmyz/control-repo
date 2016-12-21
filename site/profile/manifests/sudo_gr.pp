@@ -17,11 +17,11 @@ class profile::sudo_gr {
     priority => 12,
     content  => 'vot0 ALL=(ALL) ALL',
   }
-i  sudo::conf { 'silvaen':
+  sudo::conf { 'silvaen':
     priority => 13,
     content  => 'silvaen ALL=(ALL) ALL',
   }
-i  sudo::conf { 'ringg':
+  sudo::conf { 'ringg':
     priority => 14,
     content  => 'ringg ALL=(ALL) ALL',
   }
