@@ -5,17 +5,38 @@ class profile::sudo_gr {
 
   class { 'sudo': }
 
-#  sudo::conf { 'web':
-#    source => 'puppet:///files/etc/sudoers.d/web',
-#  }
-#  sudo::conf { 'admins':
-#    priority => 10,
-#    content  => "%admins ALL=(ALL) NOPASSWD: ALL",
-#  }
-#  sudo::conf { 'joe':
-#    priority => 60,
-#    source   => 'puppet:///files/etc/sudoers.d/users/joe',
-#  }
+  sudo::conf { 'root':
+    priority => 10,
+    content  => 'root ALL=(ALL)	ALL',
+  }
+  sudo::conf { 'avdmade':
+    priority => 11,
+    content  => 'avdmade ALL=(ALL) ALL',
+  }
+  sudo::conf { 'vot0':
+    priority => 12,
+    content  => 'vot0 ALL=(ALL) ALL',
+  }
+i  sudo::conf { 'silvaen':
+    priority => 13,
+    content  => 'silvaen ALL=(ALL) ALL',
+  }
+i  sudo::conf { 'ringg':
+    priority => 14,
+    content  => 'ringg ALL=(ALL) ALL',
+  }
+  sudo::conf { 'kazita':
+    priority => 15,
+    content  => 'kazita ALL=(ALL) ALL',
+  }
+  sudo::conf { 'pentest1_admin':
+    priority => 16,
+    content  => 'pentest1_admin ALL=(ALL) ALL',
+  }
+  sudo::conf { 'pentest2_admin':
+    priority => 17,
+    content  => 'pentest2_admin ALL=(ALL) ALL',
+  }
 
 }
 
