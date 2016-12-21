@@ -12,5 +12,6 @@ class profile::base {
   include profile::sshx
   include profile::syslog_gr
   include profile::vmwaretoolsx
+  include profile::sudo_gr
 
 }
