@@ -11,6 +11,7 @@ class profile::curator_gr {
 #
   ## Hiera lookups
   $curator_server = hiera('curator::server')
+  notify{"here it is $curator_server":}
 
   yumrepo {'curator-4':
     name     => 'curator-4',
@@ -20,17 +21,18 @@ class profile::curator_gr {
     enabled  => true,
     gpgcheck => true,
   }
+   if $curator_server == true {
 
-  class {'curator':
-    package_name     => 'python-elasticsearch-curator',
-    package_provider => 'yum',
-  }
+    class {'curator':
+#    package_name     => 'elasticsearch-curator',
+#   package_provider => 'yum',
+    }
 
-  curator::action { 'delete_indices':
-    action                => 'delete_indices',
-    continue_if_exception => 'True',
-    filters               => [
-      {
+    curator::action { 'delete_indices':
+      action                => 'delete_indices',
+      continue_if_exception => 'True',
+      filters               => [
+        {
         'filtertype' => 'pattern',
         'value'      => 'logstash-',
         'kind'       => 'prefix',
@@ -42,11 +44,10 @@ class profile::curator_gr {
         'unit'       => 'days',
         'unit_count' => '21',
         'source'     => 'name',
-      }
-    ]
-  }
+        }
+      ]
+    }
 
-  if $curator_server == true {
     cron { 'curator_run':
       ensure  => 'present',
       command => '/opt/elasticsearch-curator/curator /root/.curator/actions.yml >/dev/null',
