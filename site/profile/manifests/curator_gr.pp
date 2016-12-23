@@ -11,7 +11,8 @@ class profile::curator_gr {
 #
   ## Hiera lookups
   $curator_server = hiera('curator::server')
-  notify{"here it is $curator_server":}
+
+  notify{"curator_server = $curator_server":}
 
   yumrepo {'curator-4':
     name     => 'curator-4',
@@ -21,11 +22,12 @@ class profile::curator_gr {
     enabled  => true,
     gpgcheck => true,
   }
-   if $curator_server == true {
+    if $curator_server == true {
 
     class {'curator':
-#    package_name     => 'elasticsearch-curator',
-#   package_provider => 'yum',
+      manage_repo => false,
+      package_name     => 'elasticsearch-curator',
+      package_provider => 'yum',
     }
 
     curator::action { 'delete_indices':
