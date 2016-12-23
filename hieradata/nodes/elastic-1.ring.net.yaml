@@ -6,6 +6,7 @@ testmsg: 'This is from elastic-1.ring.net.yaml'
 #
 
 curator_gr::crontab: true
+curator::server: true
 
 elasticsearch::config::node_data: true
 elasticsearch::config::node_master: true

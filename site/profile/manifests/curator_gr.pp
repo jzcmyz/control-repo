@@ -10,7 +10,7 @@ class profile::curator_gr {
 # Get stuff out of hiera
 #
   ## Hiera lookups
-  $crontab = hiera('curator_gr::crontab')
+  $curator_server = hiera('curator::server')
 
   yumrepo {'curator-4':
     name     => 'curator-4',
@@ -46,15 +46,15 @@ class profile::curator_gr {
     ]
   }
 
-if $crontab == true {
-  cron { 'curator_run':
-    ensure  => 'present',
-    command => '/opt/elasticsearch-curator/curator /root/.curator/actions.yml >/dev/null',
-    hour    => 1,
-    minute  => 10,
-    weekday => '*',
+  if $curator_server == true {
+    cron { 'curator_run':
+      ensure  => 'present',
+      command => '/opt/elasticsearch-curator/curator /root/.curator/actions.yml >/dev/null',
+      hour    => 1,
+      minute  => 10,
+      weekday => '*',
+    }
   }
-}
 
 }
 
