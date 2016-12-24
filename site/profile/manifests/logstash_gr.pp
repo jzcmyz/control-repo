@@ -18,6 +18,7 @@ class profile::logstash_gr {
   }
 
   class { 'logstash':
+    status => enabled,
     init_defaults => {
       'LS_USER'  => 'root',
       'LS_GROUP' => 'root',
