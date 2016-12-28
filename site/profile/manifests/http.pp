@@ -52,7 +52,7 @@ class profile::http {
     docroot    => '/srv/centos',
   }
 
-  collectd::plugin { 'apache': } # turn on Apache plugin within collectd
+#  collectd::plugin { 'apache': } # turn on Apache plugin within collectd
 
   mounttab {'/var/www/html/kickstart':
     ensure => present,
