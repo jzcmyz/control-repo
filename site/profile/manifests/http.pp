@@ -27,10 +27,10 @@ class profile::http {
 # include apache::mod::php
 # etc
 
-  $modules = hiera('apache_wrapper::modules', '')
-    if ($modules != '') {
-      apache::mod { $modules : }
-  }
+#  $modules = hiera('apache_wrapper::modules', '')
+#    if ($modules != '') {
+#      apache::mod { $modules : }
+#  }
 
 #  selboolean {['httpd_enable_homedirs','ftp_home_dir']:
   selboolean {['httpd_enable_homedirs']:
