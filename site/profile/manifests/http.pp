@@ -47,11 +47,11 @@ class profile::http {
     docroot    => '/var/www/html',
   }
 
-  apache::vhost { 'repo.ring.net':
-    servername => 'repo.ring.net',
-    port       => '80',
-    docroot    => '/srv/centos',
-  }
+#  apache::vhost { 'repo.ring.net':
+#    servername => 'repo.ring.net',
+#    port       => '80',
+#    docroot    => '/srv/centos',
+#  }
 
 #  collectd::plugin { 'apache': } # turn on Apache plugin within collectd
 
