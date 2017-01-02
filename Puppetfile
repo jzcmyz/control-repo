@@ -29,7 +29,7 @@ mod "maestrodev/wget"
 mod "puppet/collectd"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt"
-mod "puppetlabs/concat"
+mod "puppetlabs/concat", '2.2.0'
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"
 mod "puppetlabs/mount_providers"
