@@ -32,7 +32,8 @@ class profile::http {
 #      apache::mod { $modules : }
 #  }
 
-  selboolean {['httpd_enable_homedirs','ftp_home_dir']:
+#  selboolean {['httpd_enable_homedirs','ftp_home_dir']:
+  selboolean {['httpd_enable_homedirs']:
     persistent => true,
     value => on,
   }
