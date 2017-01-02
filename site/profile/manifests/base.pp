@@ -14,5 +14,6 @@ class profile::base {
   include profile::vmwaretoolsx
   include profile::sudo_gr
   include profile::vim_gr
+  include profile::harden_gr
 
 }
