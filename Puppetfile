@@ -21,6 +21,7 @@ mod "garethr/docker"
 mod "herculesteam/augeasproviders_core"
 mod "herculesteam/augeasproviders_mounttab"
 mod "herculesteam/augeasproviders_ssh"
+mod "herculesteam-augeasproviders_sysctl"
 #mod 'jlambert121-curator'
 mod "lesaux/kibana4"
 mod "nanliu/staging"
