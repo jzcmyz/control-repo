@@ -11,7 +11,7 @@ class profile::harden_gr {
   }
 
   mounttab { '/var/tmp':
-    ensure  => mounted,
+    ensure  => present,
     device  => '/tmp',
     fstype  => 'none',
     options => ['rw','bind','nodev','noexec','nosuid'],
