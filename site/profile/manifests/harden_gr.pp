@@ -10,12 +10,13 @@ class profile::harden_gr {
     provider => augeas,
   }
 
-  mounttab { '/var/tmp':
-    ensure  => present,
-    device  => '/tmp',
-    fstype  => 'none',
-    options => ['rw','bind','nodev','noexec','nosuid'],
-  }
+#  mounttab { '/var/tmp':
+#    ensure  => present,
+#    device  => '/tmp',
+#    fstype  => 'none',
+#    options => ['rw','bind','nodev','noexec','nosuid'],
+#    provider => augeas,
+#  }
 
   mounttab {'/home':
     ensure => present,
