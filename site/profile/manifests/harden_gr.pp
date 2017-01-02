@@ -14,7 +14,7 @@ class profile::harden_gr {
     ensure  => mounted,
     device  => '/tmp',
     fstype  => 'none',
-    options => ['rw','bind','nodev','noexec','nosuid'],',
+    options => ['rw','bind','nodev','noexec','nosuid'],
   }
 
   mounttab {'/home':
