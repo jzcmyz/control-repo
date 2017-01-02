@@ -10,6 +10,13 @@ class profile::harden_gr {
     provider => augeas,
   }
 
+  mounttab { '/var/tmp':
+    ensure  => mounted,
+    device  => '/tmp',
+    fstype  => 'none',
+    options => ['rw','bind','nodev','noexec','nosuid'],',
+  }
+
   mounttab {'/home':
     ensure => present,
     fstype => 'xfs',
@@ -17,19 +24,13 @@ class profile::harden_gr {
     provider => augeas,
   }
 
-  mounttab {'/dev/shm':
-    ensure => present,
-    fstype => 'tmpfs',
-    options => ['nodev'],
-    provider => augeas,
-  }
-
-  mount { '/tmp': 
-    ensure  => mounted, 
-    device  => '/var/tmp', 
-    fstype  => 'none', 
-    options => 'rw,bind', 
-  } 
+#  mounttab {'/dev/shm':
+#    ensure => present,
+#    device   => "shmfs",
+#    fstype => 'tmpfs',
+#    options => ['nodev'],
+#    provider => augeas,
+#  }
 
   sysctl { 'net.ipv4.ip_forward':
     ensure => present,
