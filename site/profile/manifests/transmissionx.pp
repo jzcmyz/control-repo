@@ -61,7 +61,7 @@ class profile::transmissionx {
 #    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
 #  }
 
-  logrotate::rule { 'transmission.log':
+  logrotate::rule { 'transmission':
     path         => '/var/log/transmsission/transmission.log',
     rotate       => 4,
     rotate_every => 'week',
