@@ -26,13 +26,13 @@ class profile::sonarr {
     shell => '/sbin/nologin',
   }
 
-  archive { 'NzbDrone.master':
-    ensure => present,
-    url => 'http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz',
-    target => '/opt/',
-    src_target => '/tmp',
-    checksum => false,
-  }
+#  archive { 'NzbDrone.master':
+#    ensure => present,
+#    url => 'http://update.sonarr.tv/v2/master/mono/NzbDrone.master.tar.gz',
+#    target => '/opt/',
+#    src_target => '/tmp',
+#    checksum => false,
+#  }
 
   systemd::unit_file { 'sonarr.service':
     source => 'puppet:///modules/my_site/sonarr.service',

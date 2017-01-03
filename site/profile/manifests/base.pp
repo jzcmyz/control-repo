@@ -7,7 +7,6 @@ class profile::base {
   include profile::ntp
   include profile::packages
 #  include profile::postfixx
-#  include profile::repo_centosx
   include profile::sshx
   include profile::syslog_gr
   include profile::vmwaretoolsx

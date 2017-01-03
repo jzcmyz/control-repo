@@ -63,7 +63,7 @@ class profile::transmissionx {
 
   logrotate::rule { 'transmission.log':
     path         => '/var/log/transmsission',
-    rotate       => 5,
+    rotate       => 4,
     rotate_every => 'week',
   #  postrotate   => '/usr/bin/killall -HUP syslogd',
 }
