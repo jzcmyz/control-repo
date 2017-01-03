@@ -1,0 +1,6 @@
+---
+testmsg: 'This is from puppet-1.ring.net.yaml'
+
+redhat7::packages:
+  - ruby
+
