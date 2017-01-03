@@ -1,19 +1,19 @@
 class profile::transmissionx {
 
   firewall { '100 open Transmission TCP ports 50341':
-    proto => tcp,
+    proto  => tcp,
     action => accept,
-    dport => 50341,
+    dport  => 50341,
   }
   firewall { '100 open Transmission UDP ports 50341':
-    proto => udp,
+    proto  => udp,
     action => accept,
-    dport => 50341,
+    dport  => 50341,
   }
   firewall { '102 open Transmission GUI port 9091':
-    proto => tcp,
+    proto  => tcp,
     action => accept,
-    dport => 9091,
+    dport  => 9091,
   }
 
   ## Hiera lookups
@@ -27,20 +27,20 @@ class profile::transmissionx {
 #    minute  => 0,
 #  }
 
- file { 'mountpoint_downloads':
-    name => '/mnt/downloads',
+  file { 'mountpoint_downloads':
     ensure => 'directory',
+    name   => '/mnt/downloads',
 #    owner  => 'gavin',
 #    group  => 'gavin',
 #    mode   => '0770',
   }
 
   mounttab {'/mnt/downloads':
-    require => File['mountpoint_downloads'],
-    ensure => present,
-    fstype => 'nfs',
-    device => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-    options => 'defaults',
+    ensure   => present,
+    require  => File['mountpoint_downloads'],
+    fstype   => 'nfs',
+    device   => 'freenas.ring.net:/mnt/datastore/esx-transmission',
+    options  => 'defaults',
     provider => augeas,
   }
 
@@ -60,5 +60,12 @@ class profile::transmissionx {
 #    rpc_whitelist       => "127.0.0.1,192.168.1.*",
 #    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
 #  }
+
+  logrotate::rule { 'transmission.log':
+    path         => '/var/log/transmsission',
+    rotate       => 5,
+    rotate_every => 'week',
+  #  postrotate   => '/usr/bin/killall -HUP syslogd',
+}
 
 }
