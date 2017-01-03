@@ -62,10 +62,10 @@ class profile::transmissionx {
 #  }
 
   logrotate::rule { 'transmission.log':
-    path         => '/var/log/transmsission',
+    path         => '/var/log/transmsission/transmission.log',
     rotate       => 4,
     rotate_every => 'week',
-  #  postrotate   => '/usr/bin/killall -HUP syslogd',
-}
+    postrotate   => '/bin/systemctl reload transmission-daemon.service > /dev/null 2>/dev/null || true',
+  }
 
 }
