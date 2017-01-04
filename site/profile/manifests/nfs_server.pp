@@ -12,10 +12,11 @@ class profile::nfs_server {
 #
 
   class {'::nfs':
-    server_enabled      => true,
-    nfs_v4              => true,
-    nfs_v4_idmap_domain => $::domain,
-    nfs_v4_export_root  => '/export',
+    server_enabled             => true,
+    client_enabled             => true,
+    nfs_v4                     => true,
+    nfs_v4_idmap_domain        => $::domain,
+    nfs_v4_export_root         => '/export',
     nfs_v4_export_root_clients =>
       '*(ro,fsid=root,insecure,no_subtree_check,async,root_squash)',
   }
@@ -29,6 +30,21 @@ class profile::nfs_server {
 #    bind    => 'rbind',
 #    clients => '*(rw,sec=sys:krb5:krb5i:krb5p)',
 #    require => Mounttab['/home'],
+#  }
+
+  mounttab {'/tmp':
+    ensure   => present,
+    fstype   => 'xfs',
+    options  => ['nodev','noexec','nosuid'],
+    provider => augeas,
+  }
+
+#  mounttab { '/var/tmp':
+#    ensure  => present,
+#    device  => '/tmp',
+#    fstype  => 'none',
+#    options => ['rw','bind','nodev','noexec','nosuid'],
+#    provider => augeas,
 #  }
 
 }
