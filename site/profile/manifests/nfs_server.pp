@@ -32,12 +32,12 @@ class profile::nfs_server {
 #    require => Mounttab['/home'],
 #  }
 
-  mounttab {'/tmp':
-    ensure   => present,
-    fstype   => 'xfs',
-    options  => ['nodev','noexec','nosuid'],
-    provider => augeas,
-  }
+#  mounttab {'/tmp':
+#    ensure   => present,
+#    fstype   => 'xfs',
+#    options  => ['nodev','noexec','nosuid'],
+#    provider => augeas,
+#  }
 
 #  mounttab { '/var/tmp':
 #    ensure  => present,
