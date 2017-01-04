@@ -32,18 +32,11 @@ class profile::nfs_server {
 #    require => Mounttab['/home'],
 #  }
 
-#  mounttab {'/tmp':
-#    ensure   => present,
-#    fstype   => 'xfs',
-#    options  => ['nodev','noexec','nosuid'],
-#    provider => augeas,
-#  }
-
-  mounttab { '/var/tmp':
+  mounttab { '/dev/shm':
     ensure   => present,
-    device   => '/tmp',
-    fstype   => 'none',
-    options  => ['rw','bind','nodev','noexec','nosuid'],
+    device   => 'tmpfs',
+    fstype   => 'tmpfs',
+    options  => ['defaults'],
     provider => augeas,
   }
 

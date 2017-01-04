@@ -1,36 +1,36 @@
 class profile::harden_gr {
 
-# Add security options tothe /tmp file system
+# Add security options to the /tmp file system
   mounttab {'/tmp':
-    ensure => present,
-    fstype => 'xfs',
-    options => ['nodev','noexec','nosuid'],
+    ensure   => present,
+    fstype   => 'xfs',
+    options  => ['nodev','noexec','nosuid'],
     provider => augeas,
   }
 
-# Bind Mount /var/tmp To /tmp
+# Bind mount /var/tmp to /tmp
   mounttab { '/var/tmp':
-    ensure  => present,
-    device  => '/tmp',
-    fstype  => 'none',
-    options => ['rw','bind','nodev','noexec','nosuid'],
+    ensure   => present,
+    device   => '/tmp',
+    fstype   => 'none',
+    options  => ['rw','bind','nodev','noexec','nosuid'],
     provider => augeas,
   }
 
   mounttab {'/home':
-    ensure => present,
-    fstype => 'xfs',
-    options => ['nodev'],
+    ensure   => present,
+    fstype   => 'xfs',
+    options  => ['nodev'],
     provider => augeas,
   }
 
-#  mounttab {'/dev/shm':
-#    ensure => present,
-#    device   => "shmfs",
-#    fstype => 'tmpfs',
-#    options => ['nodev'],
-#    provider => augeas,
-#  }
+  mounttab {'/dev/shm':
+    ensure   => present,
+    device   => 'tmpfs',
+    fstype   => 'tmpfs',
+    options  => ['nodev'],
+    provider => augeas,
+  }
 
   sysctl { 'net.ipv4.ip_forward':
     ensure => present,
