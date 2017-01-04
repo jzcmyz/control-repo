@@ -1,22 +1,21 @@
 class profile::harden_gr {
 
-#
-# Rework this to remount the FS if the options are changed.
-#
-#  mounttab {'/tmp':
-#    ensure => present,
-#    fstype => 'xfs',
-#    options => ['nodev','noexec','nosuid'],
-#    provider => augeas,
-#  }
+# Add security options tothe /tmp file system
+  mounttab {'/tmp':
+    ensure => present,
+    fstype => 'xfs',
+    options => ['nodev','noexec','nosuid'],
+    provider => augeas,
+  }
 
-#  mounttab { '/var/tmp':
-#    ensure  => present,
-#    device  => '/tmp',
-#    fstype  => 'none',
-#    options => ['rw','bind','nodev','noexec','nosuid'],
-#    provider => augeas,
-#  }
+# Bind Mount /var/tmp To /tmp
+  mounttab { '/var/tmp':
+    ensure  => present,
+    device  => '/tmp',
+    fstype  => 'none',
+    options => ['rw','bind','nodev','noexec','nosuid'],
+    provider => augeas,
+  }
 
   mounttab {'/home':
     ensure => present,

@@ -40,10 +40,10 @@ class profile::nfs_server {
 #  }
 
   mounttab { '/var/tmp':
-    ensure  => present,
-    device  => '/tmp',
-    fstype  => 'none',
-    options => ['rw','bind','nodev','noexec','nosuid'],
+    ensure   => present,
+    device   => '/tmp',
+    fstype   => 'none',
+    options  => ['rw','bind','nodev','noexec','nosuid'],
     provider => augeas,
   }
 
