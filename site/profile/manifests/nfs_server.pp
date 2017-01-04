@@ -39,13 +39,13 @@ class profile::nfs_server {
 #    provider => augeas,
 #  }
 
-#  mounttab { '/var/tmp':
-#    ensure  => present,
-#    device  => '/tmp',
-#    fstype  => 'none',
-#    options => ['rw','bind','nodev','noexec','nosuid'],
-#    provider => augeas,
-#  }
+  mounttab { '/var/tmp':
+    ensure  => present,
+    device  => '/tmp',
+    fstype  => 'none',
+    options => ['rw','bind','nodev','noexec','nosuid'],
+    provider => augeas,
+  }
 
 }
 

@@ -3,12 +3,12 @@ class profile::harden_gr {
 #
 # Rework this to remount the FS if the options are changed.
 #
-  mounttab {'/tmp':
-    ensure => present,
-    fstype => 'xfs',
-    options => ['nodev','noexec','nosuid'],
-    provider => augeas,
-  }
+#  mounttab {'/tmp':
+#    ensure => present,
+#    fstype => 'xfs',
+#    options => ['nodev','noexec','nosuid'],
+#    provider => augeas,
+#  }
 
 #  mounttab { '/var/tmp':
 #    ensure  => present,
