@@ -1,4 +1,4 @@
-class profile::transmissionx {
+class profile::transmission_gr {
 
   firewall { '100 open Transmission TCP ports 50341':
     proto  => tcp,
@@ -49,17 +49,17 @@ class profile::transmissionx {
 #    ensure        => 'latest',
 #  }
 
-#  class {'transmission':
-#    rpc_authentication_required         => true,
-#    rpc_enabled         => true,
-#    transd          => '/var/lib/transmission/.config/transmission-daemon',
-#    download_dir   => '/mnt/downloads',
-#    rpc_username       => 'admin',
-#    rpc_password        => '{5ce6275cd5236f5a3928c5305ec7933769727187FrfUkdQQ',
-#    rpc_port            => 9091,
-#    rpc_whitelist       => "127.0.0.1,192.168.1.*",
+  class {'transmission':
+    rpc_authentication_required         => true,
+    rpc_enabled         => true,
+    transd          => '/var/lib/transmission/.config/transmission-daemon',
+    download_dir   => '/mnt/downloads',
+    rpc_username       => 'admin',
+    rpc_password        => '{5818041ff6f243971809f55e816a420b9beb6579cvOz.loY',
+    rpc_port            => 9091,
+    rpc_whitelist       => "127.0.0.1,192.168.1.*",
 #    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
-#  }
+  }
 
   logrotate::rule { 'transmission':
     path         => '/var/log/transmission/transmission.log',
