@@ -47,7 +47,7 @@ class profile::transmission_gr {
   class {'transmission':
     rpc_authentication_required => true,
     rpc_enabled                 => true,
-    transd                      => '/var/lib/transmission/.config/transmission-daemon',
+#    transd                      => '/var/lib/transmission/.config/transmission-daemon',
     download_dir                => '/mnt/downloads',
     rpc_username                => 'admin',
     rpc_password                => "{5818041ff6f243971809f55e816a420b9beb6579cvOz.loY",
