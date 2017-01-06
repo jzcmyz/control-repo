@@ -5,7 +5,7 @@ class role::downloader {
   include profile::base
   include profile::pythonx
 #  include profile::flexget
-  include profile::transmissionx
+  include profile::transmission_gr
   include profile::sonarr
 
 }
