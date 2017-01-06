@@ -4,6 +4,8 @@ forge "http://forge.puppetlabs.com"
 # Versions should be updated to be the latest at the time you start
 #
 #mod "bfraser/grafana"    <== Use GIT repo
+#
+mod "badgerious/windows_env"
 mod "camptocamp/archive"
 mod "camptocamp/augeas"
 mod "camptocamp/postfix"
@@ -35,6 +37,8 @@ mod "puppetlabs/firewall"
 mod "puppetlabs/java"
 mod "puppetlabs/mount_providers"
 mod "puppetlabs/ntp"
+mod "puppetlabs/powershell"
+mod "puppetlabs/registry"
 mod "puppetlabs/stdlib"
 mod "razorsedge/vmwaretools"
 mod "richardc/datacat"
