@@ -29,6 +29,7 @@ mod "maestrodev/wget"
 mod "puppet/collectd"
 mod "puppetlabs/apache"
 mod "puppetlabs/apt"
+mod "chocolatey/chocolatey"
 mod "puppetlabs/concat", '2.2.0'
 mod "puppetlabs/firewall"
 mod "puppetlabs/java"

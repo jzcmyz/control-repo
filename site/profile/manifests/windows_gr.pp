@@ -7,6 +7,10 @@ class profile::windows_gr {
 #  notify{"here it is $packages":}
 #  notify{"here it is $redhat7packages":}
 
+  class {'chocolatey':
+    use_7zip                        => false,
+  }
+
   package { 'filezilla':
     ensure   => installed,
     provider => chocolatey,
