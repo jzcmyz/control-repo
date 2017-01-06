@@ -27,9 +27,9 @@ class profile::transmission_gr {
 #    minute  => 0,
 #  }
 
-  file { 'mountpoint_downloads':
-    ensure => 'directory',
-    name   => '/mnt/downloads',
+#  file { 'mountpoint_downloads':
+#    ensure => 'directory',
+#    name   => '/mnt/downloads',
 #    owner  => 'gavin',
 #    group  => 'gavin',
 #    mode   => '0770',
@@ -37,7 +37,7 @@ class profile::transmission_gr {
 
   mounttab {'/mnt/downloads':
     ensure   => present,
-    require  => File['mountpoint_downloads'],
+#    require  => File['mountpoint_downloads'],
     fstype   => 'nfs',
     device   => 'freenas.ring.net:/mnt/datastore/esx-transmission',
     options  => 'defaults',
