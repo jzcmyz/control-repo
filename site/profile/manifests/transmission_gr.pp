@@ -33,7 +33,7 @@ class profile::transmission_gr {
 #    owner  => 'gavin',
 #    group  => 'gavin',
 #    mode   => '0770',
-  }
+#  }
 
   mounttab {'/mnt/downloads':
     ensure   => present,
