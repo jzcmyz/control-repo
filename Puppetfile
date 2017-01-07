@@ -52,10 +52,9 @@ mod "wolfspyre/vmware_puppetfact"
 mod "yo61/logrotate"
 #mod "WhatsARanjit/transmission"
 
-# Modules from Git
-#mod 'transmission',
-#  :git    => 'http://razor.ring.net/jzcmyz/transmission'
-#  Gavin Was here
+# Modules from Gitlab
+mod 'transmission',
+  :git    => 'http://razor.ring.net/jzcmyz/transmission'
   
 # Modules from Git
 mod 'dhcp',
