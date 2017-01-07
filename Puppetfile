@@ -50,7 +50,7 @@ mod "stankevich/python"
 mod "WhatsARanjit/plexmediaserver"
 mod "wolfspyre/vmware_puppetfact"
 mod "yo61/logrotate"
-mod "WhatsARanjit/transmission"
+#mod "WhatsARanjit/transmission"
 
 # Modules from Git
 #mod 'transmission',
