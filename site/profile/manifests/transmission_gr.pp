@@ -45,15 +45,15 @@ class profile::transmission_gr {
   }
 
   class {'transmission':
+    blocklist_enabled => true,
+    blocklist_url  => "http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz",
     rpc_authentication_required => true,
     rpc_enabled                 => true,
-#    transd                      => '/var/lib/transmission/.config/transmission-daemon',
     download_dir                => '/mnt/downloads',
     rpc_username                => 'admin',
     rpc_password                => "{5818041ff6f243971809f55e816a420b9beb6579cvOz.loY",
     rpc_port                    => 9091,
     rpc_whitelist               => '127.0.0.1,192.168.1.*',
-#    blocklist_url  => 'http://list.iblocklist.com/?list=bt_templist&fileformat=p2p&archiveformat=gz',
   }
 
   logrotate::rule { 'transmission':
