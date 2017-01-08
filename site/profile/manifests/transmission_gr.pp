@@ -49,7 +49,7 @@ class profile::transmission_gr {
     blocklist_url               => 'http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz',
     rpc_authentication_required => true,
     rpc_enabled                 => true,
-    download_dir                => '/mnt/downloads',
+#    download_dir                => '/mnt/downloads',    #download to local directory... not NFS directory
     rpc_username                => 'admin',
     rpc_password                => '{5818041ff6f243971809f55e816a420b9beb6579cvOz.loY',
     rpc_port                    => 9091,
