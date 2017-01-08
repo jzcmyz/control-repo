@@ -59,6 +59,7 @@ mod "yo61/logrotate"
 # Modules from Gitlab
 mod 'transmission',
   :git    => 'http://razor.ring.net/jzcmyz/transmission.git'
+  :default_branch => 'master'
   
 # Modules from Git
 mod 'dhcp',
