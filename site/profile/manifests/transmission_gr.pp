@@ -16,8 +16,6 @@ class profile::transmission_gr {
     dport  => 9091,
   }
 
-  ## Hiera lookups
-#  $crontabs = hiera('system::crontabs')
 
 #  include system::crontabs
 #  cron {'transmission-blocklist':
@@ -27,33 +25,17 @@ class profile::transmission_gr {
 #    minute  => 0,
 #  }
 
-#  file { 'mountpoint_downloads':
-#    ensure => 'directory',
-#    name   => '/mnt/downloads',
-#    owner  => 'gavin',
-#    group  => 'gavin',
-#    mode   => '0770',
-#  }
-
-#  mounttab {'/mnt/downloads':
-#    ensure   => present,
-#    require  => File['mountpoint_downloads'],
-#    fstype   => 'nfs',
-#    device   => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-#    options  => 'defaults',
-#    provider => augeas,
-#  }
-
   class {'transmission':
     blocklist_enabled           => true,
     blocklist_url               => 'http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz',
+    ratio_limit_enabled         => true,
+    ratio_limit                 => 2,
     rpc_authentication_required => true,
     rpc_enabled                 => true,
-#    download_dir                => '/mnt/downloads',    #download to local directory... not NFS directory
     rpc_username                => 'admin',
     rpc_password                => '{5818041ff6f243971809f55e816a420b9beb6579cvOz.loY',
     rpc_port                    => 9091,
-    rpc_whitelist_enabled	=> true,
+    rpc_whitelist_enabled       => true,
     rpc_whitelist               => '127.0.0.1,192.168.1.*',
   }
 
