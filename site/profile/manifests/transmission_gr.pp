@@ -37,7 +37,7 @@ class profile::transmission_gr {
     rpc_port                    => 9091,
     rpc_whitelist_enabled       => true,
     rpc_whitelist               => '127.0.0.1,192.168.1.*',
-    transd			=> '/var/lib/transmission/.config/transmission-daemon',
+#    transd			=> '/var/lib/transmission/.config/transmission-daemon',
   }
 
   logrotate::rule { 'transmission':
