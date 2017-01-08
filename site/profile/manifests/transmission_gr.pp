@@ -35,14 +35,14 @@ class profile::transmission_gr {
 #    mode   => '0770',
 #  }
 
-  mounttab {'/mnt/downloads':
-    ensure   => present,
+#  mounttab {'/mnt/downloads':
+#    ensure   => present,
 #    require  => File['mountpoint_downloads'],
-    fstype   => 'nfs',
-    device   => 'freenas.ring.net:/mnt/datastore/esx-transmission',
-    options  => 'defaults',
-    provider => augeas,
-  }
+#    fstype   => 'nfs',
+#    device   => 'freenas.ring.net:/mnt/datastore/esx-transmission',
+#    options  => 'defaults',
+#    provider => augeas,
+#  }
 
   class {'transmission':
     blocklist_enabled           => true,
