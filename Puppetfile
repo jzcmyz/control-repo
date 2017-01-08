@@ -6,7 +6,7 @@ forge "http://forge.puppetlabs.com"
 #mod "bfraser/grafana"    <== Use GIT repo
 #
 mod "badgerious/windows_env"
-mod "camptocamp/archive"
+mod "camptocamp/archive", '0.9.0'
 mod "camptocamp/augeas"
 mod "camptocamp/postfix"
 mod "camptocamp/systemd"
