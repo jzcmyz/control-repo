@@ -16,7 +16,6 @@ class profile::transmission_gr {
     dport  => 9091,
   }
 
-
 #  include system::crontabs
 #  cron {'transmission-blocklist':
 #    command => '/usr/bin/transmission-remote -n admin:password --blocklist-update',
