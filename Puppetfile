@@ -58,7 +58,8 @@ mod "yo61/logrotate"
 # Modules from Gitlab
 # Modules from Gitlab
 mod 'transmission',
-  :git    => 'http://razor.ring.net/jzcmyz/transmission.git'
+  :git    => 'ssh://git@razor.ring.net:jzcmyz/transmission.git'
+#  :git    => 'http://razor.ring.net/jzcmyz/transmission.git'
   
 # Modules from Git
 mod 'dhcp',
