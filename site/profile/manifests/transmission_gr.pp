@@ -16,17 +16,18 @@ class profile::transmission_gr {
     dport  => 9091,
   }
 
-#  include system::crontabs
-#  cron {'transmission-blocklist':
-#    command => '/usr/bin/transmission-remote -n admin:password --blocklist-update',
-#    user    => 'transmission',
-#    hour    => 11,
-#    minute  => 0,
-#  }
+  cron {'transmission-blocklist':
+    command  => '/usr/bin/transmission-remote -n admin:password --blocklist-update',
+    user     => 'transmission',
+    monthday => 1,
+    hour     => 11,
+    minute   => 15,
+  }
 
   class {'transmission':
     blocklist_enabled           => true,
     blocklist_url               => 'http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz',
+    peer_port                   => 50341, # This port is open on the pfsense firewall
     ratio_limit_enabled         => true,
     ratio_limit                 => 2,
     rpc_authentication_required => true,
@@ -36,7 +37,7 @@ class profile::transmission_gr {
     rpc_port                    => 9091,
     rpc_whitelist_enabled       => true,
     rpc_whitelist               => '127.0.0.1,192.168.1.*',
-#    transd			=> '/var/lib/transmission/.config/transmission-daemon',
+    transd                      => '/var/lib/transmission',
   }
 
   logrotate::rule { 'transmission':
