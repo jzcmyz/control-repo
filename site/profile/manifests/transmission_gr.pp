@@ -1,5 +1,7 @@
 class profile::transmission_gr {
 
+  notify{"Data in module  = $transmission_gavin":}
+
   firewall { '100 open Transmission TCP ports 50341':
     proto  => tcp,
     action => accept,
