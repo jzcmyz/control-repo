@@ -37,6 +37,11 @@ class profile::sudo_gr {
     priority => 17,
     content  => 'pentest2_admin ALL=(ALL) ALL',
   }
+  sudo::conf { 'gavin':
+    priority => 18,
+    content  => 'gavin ALL=(ALL) ALL',
+  }
+
 
 }
 

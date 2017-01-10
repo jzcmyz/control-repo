@@ -48,5 +48,12 @@ class profile::transmission_gr {
     rotate_every => 'week',
     postrotate   => '/bin/systemctl reload transmission-daemon.service > /dev/null 2>/dev/null || true',
   }
+ 
+  augeas { 'transmission-daemon.service':
+    context => '/files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments',
+    changes => [
+      'set /files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments[last()]/3 --logfile /var/log/transmission/transmission.log',
+    ],
+  }
 
 }
