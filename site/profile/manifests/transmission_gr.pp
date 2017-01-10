@@ -52,7 +52,7 @@ class profile::transmission_gr {
   augeas { 'transmission-daemon.service':
     context => '/files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments',
     changes => [
-      'set /files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments[last()]/3 --logfile /var/log/transmission/transmission.log',
+      'set /files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments[last()]/3 "--logfile /var/log/transmission/transmission.log"',
     ],
   }
 
