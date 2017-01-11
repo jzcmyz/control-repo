@@ -31,7 +31,7 @@ class profile::transmission_gr {
     blocklist_url               => 'http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz',
     peer_port                   => 50341, # This port is open on the pfsense firewall
     ratio_limit_enabled         => true,
-    ratio_limit                 => 2,
+    ratio_limit                 => 4,
     rpc_authentication_required => true,
     rpc_enabled                 => true,
     rpc_username                => 'admin',
@@ -50,10 +50,8 @@ class profile::transmission_gr {
   }
  
   augeas { 'transmission-daemon.service':
-    context => '/files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments',
-    changes => [
-      'set /files/lib/systemd/system/transmission-daemon.service/Service/ExecStart/arguments[last()]/3 "--logfile /var/log/transmission/transmission.log"',
-    ],
+    context => '/files/lib/systemd/system/transmission-daemon.service/Service/ExecStart',
+    changes => 'set arguments[last()]/3 --logfile ',
   }
 
 }

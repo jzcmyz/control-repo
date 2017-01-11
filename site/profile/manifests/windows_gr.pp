@@ -8,7 +8,7 @@ class profile::windows_gr {
 #  notify{"here it is $redhat7packages":}
 
   class {'chocolatey':
-    use_7zip                        => false,
+    use_7zip => false,
   }
 
   package { 'bginfo':
