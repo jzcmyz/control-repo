@@ -16,6 +16,11 @@ class profile::windows_gr {
     provider => chocolatey,
   }
 
+  package { 'dotnet3.5':
+    ensure   => installed,
+    provider => chocolatey,
+  }
+
   package { 'filezilla':
     ensure   => installed,
     provider => chocolatey,
@@ -51,11 +56,6 @@ class profile::windows_gr {
     provider => chocolatey,
   }
 
-  package { 'onedrive':
-    ensure   => installed,
-    provider => chocolatey,
-  }
-
   package { 'putty':
     ensure   => installed,
     provider => chocolatey,
@@ -64,6 +64,7 @@ class profile::windows_gr {
   package { 'superputty':
     ensure   => installed,
     provider => chocolatey,
+    require  => Package['dotnet3.5']
   }
 
   package { 'transgui':
