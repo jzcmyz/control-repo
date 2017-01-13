@@ -11,6 +11,11 @@ class profile::windows_gr {
     use_7zip => false,
   }
 
+  package { 'adobereader':
+    ensure   => installed,
+    provider => chocolatey,
+  }
+
   package { 'bginfo':
     ensure   => installed,
     provider => chocolatey,
@@ -75,6 +80,12 @@ class profile::windows_gr {
   package { 'vlc':
     ensure   => installed,
     provider => chocolatey,
+  }
+
+  package { 'vmwarevsphereclient':
+    ensure   => installed,
+    provider => chocolatey,
+    require  => Package['dotnet3.5']
   }
 
 }
