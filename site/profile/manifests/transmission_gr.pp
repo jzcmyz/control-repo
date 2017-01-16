@@ -1,6 +1,8 @@
 class profile::transmission_gr {
 
-  notify{"Data in module = $gavin":}
+  notify{"Data in module1 = $transmission::gavin":}
+  notify{"Data in module2 = $gavin":}
+  notify{"Data in module3 = $transmission::ratio_limit":}
 
   firewall { '100 open Transmission TCP ports 50341':
     proto  => tcp,
