@@ -1,9 +1,5 @@
 class profile::transmission_gr {
 
-  notify{"Data in module1 = $transmission::gavin":}
-  notify{"Data in module2 = $gavin":}
-  notify{"Data in module3 = $transmission::ratio_limit":}
-
   firewall { '100 open Transmission TCP ports 50341':
     proto  => tcp,
     action => accept,
@@ -33,7 +29,6 @@ class profile::transmission_gr {
     blocklist_url               => 'http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz',
     peer_port                   => 50341, # This port is open on the pfsense firewall
     ratio_limit_enabled         => true,
-    ratio_limit                 => 4,
     rpc_authentication_required => true,
     rpc_enabled                 => true,
     rpc_username                => 'admin',
