@@ -46,9 +46,22 @@ class profile::transmission_gr {
     postrotate   => '/bin/systemctl reload transmission-daemon.service > /dev/null 2>/dev/null || true',
   }
  
-#  augeas { 'transmission-daemon.service':
-#    context => '/files/lib/systemd/system/transmission-daemon.service/Service/ExecStart',
-#    changes => 'set arguments[last()]/3 --logfile ',
-#  }
+#
+# Create the override file for the transmission daemon
+#
+  file { '/etc/systemd/system/transmission-daemon.service.d':
+    ensure => 'directory',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
+
+  file { '/etc/systemd/system/transmission-daemon.service.d/override.conf':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source => 'puppet:///modules/my_site/transmission/override.conf',
+  }
 
 }
