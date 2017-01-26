@@ -62,6 +62,7 @@ class profile::transmission_gr {
     group   => 'root',
     mode    => '0644',
     source => 'puppet:///modules/my_site/transmission/override.conf',
+    notify  => Service['transmission-daemon'],  # this sets up the relationship
   }
 
 }
