@@ -1,8 +1,8 @@
 ---
 message: "This node is using common data"
 
-#Puppet Server Tuning
-puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
+#Puppet Server Tuning <== Verifiy if this is still valid
+#puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
 
 #
 #Note to GitLab users: Because GitLab has a character limit on webhooks, 
@@ -10,8 +10,8 @@ puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
 #Instead of using a token, you should instead turn off authentication by customizing 
 #your Code Manager configuration in Hiera with the authenticate_webhook parameter.
 #
-puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
-puppet_enterprise::master::code_manager::authenticate_webhook: false
+#puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
+#puppet_enterprise::master::code_manager::authenticate_webhook: false
 
 syslog-ng::role: client
 collectd::role: server
