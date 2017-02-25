@@ -1,4 +1,4 @@
-class profile::spacewalk {
+class profile::linux::spacewalk_gr {
 
   firewall { '808 open spacewalk web interface ports 80 and 443':
     proto => tcp,
