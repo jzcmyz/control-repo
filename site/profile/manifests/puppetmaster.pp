@@ -8,10 +8,15 @@ class profile::puppetmaster {
     action => accept,
     dport => [ 80, 443 ],
   }
-  firewall { '817 open Code Manager port 8170':
+  firewall { '817 open Puppet Code Manager port 8170':
     proto => tcp,
     action => accept,
     dport => 8170,
+  }
+  firewall { '808 open PuppetDB dashboard port 8080':
+    proto => tcp,
+    action => accept,
+    dport => 8080,
   }
   firewall { '010 open Puppet port 8140':
     proto => tcp,
