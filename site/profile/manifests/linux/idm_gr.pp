@@ -1,4 +1,4 @@
-class profile::idm_master {
+class profile::linux::idm_gr {
 
   firewall { '053 open BIND/DNS TCP port 53':
     proto => tcp,
