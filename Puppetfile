@@ -47,6 +47,7 @@ mod "saz/sudo"
 mod "saz/vim"
 mod "stahnma/epel"
 mod "stankevich/python"
+mod "thias/vsftpd", '0.2.1'
 #mod "treydock/gpg_key"
 #mod "treydock/repo_centos"
 mod "WhatsARanjit/plexmediaserver"

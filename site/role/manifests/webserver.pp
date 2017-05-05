@@ -4,5 +4,6 @@ class role::webserver {
   #All roles should include the base profile
   include profile::base
   include profile::http
+  include profile::linux::vsftpd_gr
 
 }
