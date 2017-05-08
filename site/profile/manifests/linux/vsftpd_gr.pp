@@ -6,6 +6,11 @@ class profile::linux::vsftpd_gr {
     dport => 21,
   }
 
+  selboolean {'allow_ftpd_full_access':
+    persistent => true,
+    value => on,
+  }
+
   class { 'vsftpd':
     anonymous_enable  => 'NO',
     write_enable      => 'YES',
