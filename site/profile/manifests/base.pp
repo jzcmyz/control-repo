@@ -10,7 +10,7 @@ class profile::base {
   include profile::sshx
   include profile::syslog_gr
 #  include profile::vmwaretoolsx
-  include profile::openwmtools_gr
+  include profile::openvmtools_gr
   include profile::sudo_gr
   include profile::vim_gr
   include profile::harden_gr
