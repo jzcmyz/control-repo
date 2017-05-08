@@ -42,7 +42,7 @@ mod "puppetlabs/powershell"
 mod "puppetlabs/registry"
 mod "puppetlabs/stdlib"
 mod "razorsedge/openvmtools", '1.0.0'
-mod "razorsedge/vmwaretools"
+#mod "razorsedge/vmwaretools"
 mod "richardc/datacat"
 mod "saz/sudo"
 mod "saz/vim"
