@@ -13,6 +13,6 @@ class profile::base {
   include profile::openvmtools_gr
   include profile::sudo_gr
   include profile::vim_gr
-  include profile::harden_gr
+#  include profile::harden_gr
 
 }

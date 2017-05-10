@@ -6,7 +6,7 @@ class profile::influxdb_gr {
     dport => [ 8083, 8086 ],
   }
   
-  $global_config => {
+  $global_config = {
 #    'bind-address'       => ':8088',
     'reporting-disabled' => true,
   }
