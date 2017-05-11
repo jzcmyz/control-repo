@@ -20,8 +20,8 @@ class profile::linux::plex_gr {
     plex_media_server_max_lock_mem            => '4000',
     plex_media_server_max_open_files          => '1024',
     plex_media_server_tmpdir                  => '/tmp',
-    plex_url => 'https://downloads.plex.tv/plex-media-server/0.9.16.4.1911-ee6e505',
-    plex_pkg => "plexmediaserver-0.9.16.4.1911-ee6e505.${::architecture}.rpm",
+    plex_url => 'https://downloads.plex.tv/plex-media-server/1.5.6.3790-4613ce077/plexmediaserver-1.5.6.3790-4613ce077.x86_64.rpm',
+    plex_pkg => 'plexmediaserver-1.5.6.3790-4613ce077.x86_64.rpm',
   }
 
 #
