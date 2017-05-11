@@ -12,17 +12,19 @@ class profile::linux::plex_gr {
     dport => [ 1900, 5353 ],
   }
 
-  class {'plexmediaserver':
-    plex_user                                 => 'plex',
-    plex_media_server_home                    => '/usr/lib/plexmediaserver',
-    plex_media_server_max_plugin_procs        => '7',
-    plex_media_server_max_stack_size          => '20000',
-    plex_media_server_max_lock_mem            => '4000',
-    plex_media_server_max_open_files          => '1024',
-    plex_media_server_tmpdir                  => '/tmp',
-    plex_url => 'https://downloads.plex.tv/plex-media-server/1.5.6.3790-4613ce077/plexmediaserver-1.5.6.3790-4613ce077.x86_64.rpm',
-    plex_pkg => 'plexmediaserver-1.5.6.3790-4613ce077.x86_64.rpm',
-  }
+#  Downloading the PMS rpm file is not working
+
+#  class {'plexmediaserver':
+#    plex_user                                 => 'plex',
+#    plex_media_server_home                    => '/usr/lib/plexmediaserver',
+#    plex_media_server_max_plugin_procs        => '7',
+#    plex_media_server_max_stack_size          => '20000',
+#    plex_media_server_max_lock_mem            => '4000',
+#    plex_media_server_max_open_files          => '1024',
+#    plex_media_server_tmpdir                  => '/tmp',
+#    plex_url => 'https://downloads.plex.tv/plex-media-server/1.5.6.3790-4613ce077/plexmediaserver-1.5.6.3790-4613ce077.x86_64.rpm',
+#    plex_pkg => 'plexmediaserver-1.5.6.3790-4613ce077.x86_64.rpm',
+#  }
 
 #
 # Need to create mountpoint before mounting NFS share
