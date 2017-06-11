@@ -7,10 +7,11 @@ puppet_enterprise::master::puppetserver::jruby_max_requests_per_instance: 0
 ntp::country: au
 
 ntp::servers:
-  - 0.au.pool.ntp.org
-  - 1.au.pool.ntp.org
-  - 2.au.pool.ntp.org
-  - 3.au.pool.ntp.org
+  - 192.168.1.254
+#  - 0.au.pool.ntp.org
+#  - 1.au.pool.ntp.org
+#  - 2.au.pool.ntp.org
+#  - 3.au.pool.ntp.org
 
 redhat6::packages:
   - bind-utils

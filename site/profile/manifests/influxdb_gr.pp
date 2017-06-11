@@ -1,13 +1,12 @@
 class profile::influxdb_gr {
 
   firewall { '808 open influxdb ports 8083 8086':
-    proto => tcp,
+    proto  => tcp,
     action => accept,
-    dport => [ 8083, 8086 ],
+    dport  => [ 8083, 8086 ],
   }
-  
+
   $global_config = {
-#    'bind-address'       => ':8088',
     'reporting-disabled' => true,
   }
 
