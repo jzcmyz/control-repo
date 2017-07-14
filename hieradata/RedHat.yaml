@@ -8,10 +8,6 @@ ntp::country: au
 
 ntp::servers:
   - 192.168.1.254
-#  - 0.au.pool.ntp.org
-#  - 1.au.pool.ntp.org
-#  - 2.au.pool.ntp.org
-#  - 3.au.pool.ntp.org
 
 redhat6::packages:
   - bind-utils
@@ -29,7 +25,6 @@ redhat6::packages:
 
 redhat7::packages:
   - net-tools
-#  - perl This package is also defined in the vmwaretools module
   - policycoreutils-python
   - rsync
   - system-storage-manager
